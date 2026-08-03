@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Action Network | The College Football Teams Traveling the Most in 2026</title>
+  <meta name="description" content="Action Network ranks 138 college football teams by their 2026 regular-season travel, with conference comparisons, year-over-year changes, and the season's longest trips.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #101820;
+      --navy-2: #152630;
+      --navy-3: #203640;
+      --green: #00b67a;
+      --green-bright: #00e09a;
+      --green-dark: #00865b;
+      --green-soft: #e8fff6;
+      --ink: #18242b;
+      --muted: #607078;
+      --line: #d8e2de;
+      --paper: #f5f8f6;
+      --white: #ffffff;
+      --display: "Barlow Condensed", Arial, sans-serif;
+      --serif: "Source Serif 4", Georgia, serif;
+      --shadow: 0 18px 45px rgba(16, 24, 32, 0.09);
+      --tight: cubic-bezier(.2, .72, .2, 1);
+      --page-gutter: clamp(16px, 3.5vw, 36px);
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: var(--green) #dfe9e5;
+      scrollbar-gutter: stable;
+    }
+    html::-webkit-scrollbar { width: 8px; height: 8px; }
+    html::-webkit-scrollbar-track { background: #dfe9e5; }
+    html::-webkit-scrollbar-thumb {
+      border: 1px solid #dfe9e5;
+      background: linear-gradient(180deg, var(--green-bright), var(--green), var(--green-dark));
+    }
+    html::-webkit-scrollbar-thumb:hover { background: var(--green-dark); }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--serif);
+      font-size: clamp(15.5px, 1.3vw, 17px);
+      line-height: 1.62;
+    }
+    button, input, select { font: inherit; }
+    button { border-radius: 0; }
+    a { color: var(--green-dark); }
+    img, svg { display: block; max-width: 100%; height: auto; }
+    .page { width: 100%; max-width: 100%; overflow-x: clip; }
+    .wrap {
+      width: calc(100% - var(--page-gutter) - var(--page-gutter));
+      max-width: 1108px;
+      margin-inline: auto;
+    }
+    .band-dark { position: relative; overflow: hidden; background: var(--navy); color: var(--white); }
+    .band-dark::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 25%, rgba(0, 224, 154, .15), transparent 31%),
+        linear-gradient(125deg, transparent 0 62%, rgba(255,255,255,.025) 62% 63%, transparent 63% 70%, rgba(255,255,255,.018) 70% 71%, transparent 71%);
+      pointer-events: none;
+    }
+    .band-inner { position: relative; z-index: 1; padding: clamp(24px, 4.4vw, 52px) 0 clamp(30px, 5.2vw, 62px); }
+    .band-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: clamp(26px, 4vw, 46px); }
+    .logo-lockup { display: inline-flex; align-items: center; flex: 0 0 auto; }
+    .logo-svg { width: clamp(180px, 22vw, 228px); height: auto; overflow: visible; }
+    .logo-circle { fill: none; stroke: var(--green-bright); stroke-width: 3; }
+    .logo-check { fill: none; stroke: var(--green-bright); stroke-width: 3; stroke-linecap: square; stroke-linejoin: miter; }
+    .logo-word { fill: #fff; font-family: var(--display); font-size: 20px; font-weight: 900; letter-spacing: 1.7px; }
+    .kicker, .section-kicker, .mini-label, .stat-label, .chip, .control-label, .rank-tag, .route-meta, .footer-label {
+      font-family: var(--display);
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .kicker { margin: 0; color: rgba(255,255,255,.64); font-size: 12px; text-align: right; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(320px, .78fr); gap: clamp(24px, 4vw, 48px); align-items: stretch; }
+    h1, h2, h3 { margin: 0; font-family: var(--display); line-height: .98; color: var(--navy); }
+    h1 { color: #fff; font-size: clamp(46px, 6.8vw, 84px); font-weight: 900; letter-spacing: -.025em; }
+    h1 .accent, h2 .accent { color: var(--green-bright); }
+    h2 { font-size: clamp(36px, 5vw, 58px); font-weight: 900; letter-spacing: -.018em; }
+    h3 { font-size: clamp(24px, 2.7vw, 32px); font-weight: 800; letter-spacing: -.01em; }
+    .dek { width: 100%; margin: clamp(18px, 2.5vw, 26px) 0 0; color: rgba(255,255,255,.78); font-size: clamp(17px, 1.75vw, 20px); line-height: 1.55; }
+    .byline { width: 100%; display: flex; flex-wrap: wrap; gap: 7px 11px; margin: 20px 0 0; color: rgba(255,255,255,.58); font-size: 13px; }
+    .byline b { color: #fff; }
+    .hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; margin-top: clamp(22px, 3.2vw, 34px); border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.13); }
+    .hero-stat { min-width: 0; padding: clamp(16px, 2vw, 22px); background: rgba(16,24,32,.72); }
+    .hero-stat strong { display: block; color: #fff; font-family: var(--display); font-size: clamp(27px, 3.15vw, 43px); font-weight: 900; line-height: 1; white-space: nowrap; }
+    .hero-stat strong .unit { color: var(--green-bright); }
+    .stat-label { display: block; margin-top: 8px; color: rgba(255,255,255,.57); font-size: 11px; line-height: 1.25; }
+    .route-card { position: relative; min-height: 100%; padding: clamp(22px, 3vw, 34px); border: 1px solid rgba(255,255,255,.16); border-left: 6px solid var(--green-bright); background: rgba(255,255,255,.045); box-shadow: 0 35px 80px rgba(0,0,0,.28); }
+    .route-card::after, .finding::after, .method-card::after, .trip-card::after {
+      content: ""; position: absolute; top: -1px; right: -1px; width: 18px; height: 18px;
+      background: linear-gradient(135deg, transparent 0 49%, var(--green) 50% 100%);
+    }
+    .route-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    .mini-label { color: var(--green-bright); font-size: 11px; }
+    .rank-tag { padding: 4px 8px; color: var(--navy); background: var(--green-bright); font-size: 10px; }
+    .route-card h2 { margin-top: 13px; color: #fff; font-size: clamp(34px, 4vw, 50px); }
+    .route-total { display: flex; align-items: baseline; gap: 8px; margin-top: 14px; font-family: var(--display); }
+    .route-total strong { color: var(--green-bright); font-size: clamp(50px, 6vw, 72px); line-height: 1; font-weight: 900; }
+    .route-total span { color: rgba(255,255,255,.58); font-weight: 700; }
+    .route-map { width: 100%; aspect-ratio: 47 / 19; height: auto; margin: 15px 0 8px; overflow: visible; }
+    .route-map .grid { stroke: rgba(255,255,255,.08); stroke-width: 1; }
+    .route-map .axis { stroke: rgba(255,255,255,.28); stroke-width: 1; }
+    .route-map .flight-path { fill: none; stroke: var(--green); stroke-width: 1.8; stroke-dasharray: 5 7; stroke-linecap: square; animation: routeDash 3.6s linear infinite; }
+    .route-map .origin { fill: var(--green-bright); filter: drop-shadow(0 0 5px rgba(0,224,154,.8)); }
+    .route-map .destination { fill: #fff; stroke: var(--green); stroke-width: 2; }
+    .route-map text { fill: rgba(255,255,255,.72); font: 700 10px var(--display); letter-spacing: .04em; }
+    .route-map .distance-label { fill: rgba(255,255,255,.82); font-size: 10px; }
+    .route-map .tick-label { fill: rgba(255,255,255,.42); font-size: 8px; text-anchor: middle; }
+    .route-map .axis-title { fill: rgba(255,255,255,.48); font-size: 8px; text-anchor: middle; }
+    .route-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 13px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.12); }
+    .route-grid div { padding: 12px; background: rgba(16,24,32,.64); }
+    .route-grid b { display: block; color: #fff; font-family: var(--display); font-size: 21px; line-height: 1; }
+    .route-meta { display: block; margin-top: 5px; color: rgba(255,255,255,.5); font-size: 9px; line-height: 1.25; }
+    @keyframes routeDash { to { stroke-dashoffset: -48; } }
+
+    .menu-sentinel { display: block; height: 1px; visibility: hidden; }
+    .jump-nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.95); backdrop-filter: blur(12px); }
+    .jump-inner { display: flex; align-items: center; gap: 9px; padding: 11px 0; overflow-x: auto; scrollbar-width: none; }
+    .jump-inner::-webkit-scrollbar { display: none; }
+    .chip { flex: 0 0 auto; appearance: none; padding: 9px 14px; border: 1px solid var(--line); color: var(--muted); background: #fff; font-size: 11px; line-height: 1; cursor: pointer; transition: color .18s ease, border-color .18s ease, background .18s ease, transform .18s ease; }
+    .chip:hover, .chip.is-active { color: #fff; border-color: var(--green-dark); background: var(--green-dark); transform: translateY(-1px); }
+    .scroll-sentinel { display: block; position: relative; top: -64px; height: 1px; visibility: hidden; }
+    .section { position: relative; padding: clamp(54px, 8vw, 96px) 0; }
+    .section-white { background: #fff; }
+    .section-dark { color: #fff; background: var(--navy-2); }
+    .section-kicker { margin: 0 0 10px; color: var(--green-dark); font-size: 12px; }
+    .section-dark .section-kicker { color: var(--green-bright); }
+    .section-dark h2, .section-dark h3 { color: #fff; }
+    .section-intro { width: 100%; margin: 15px 0 0; color: var(--muted); font-size: clamp(16px, 1.55vw, 18px); }
+    .section-dark .section-intro { color: rgba(255,255,255,.7); }
+    .rule { width: 72px; height: 6px; margin: 20px 0 0; background: var(--green); }
+
+    .section-return { display: flex; align-items: center; gap: clamp(12px, 2vw, 18px); padding: clamp(12px, 1.8vw, 20px) clamp(14px, 3.4vw, 40px); background: var(--paper); }
+    .section-return.on-white { background: #fff; }
+    .section-return.on-dark { background: var(--navy-2); }
+    .section-return::before, .section-return::after { content: ""; flex: 1; min-width: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--line)); }
+    .section-return::after { background: linear-gradient(90deg, var(--line), transparent); }
+    .section-return.on-dark::before { background: linear-gradient(90deg, transparent, rgba(255,255,255,.2)); }
+    .section-return.on-dark::after { background: linear-gradient(90deg, rgba(255,255,255,.2), transparent); }
+    .return-button { appearance: none; display: inline-flex; align-items: center; justify-content: center; gap: 9px; flex: 0 0 auto; padding: 11px clamp(16px, 2.4vw, 24px); border: 2px solid var(--navy); color: #fff; background: var(--navy); font-family: var(--display); font-size: clamp(12px, 1.2vw, 14px); font-weight: 800; letter-spacing: .15em; line-height: 1; text-transform: uppercase; cursor: pointer; transition: color .18s ease, border-color .18s ease, background .18s ease, transform .18s ease; }
+    .return-button .up { display: inline-block; font-size: 16px; transition: transform .18s ease; }
+    .return-button:hover { border-color: var(--green-dark); background: var(--green-dark); transform: translateY(-1px); }
+    .return-button:hover .up { transform: translateY(-3px); }
+    .return-button:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+    .section-return.on-dark .return-button { border-color: var(--green-bright); color: var(--navy); background: var(--green-bright); }
+    .section-return.on-dark .return-button:hover { border-color: #fff; background: #fff; }
+
+    .findings { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: clamp(28px, 4vw, 42px); }
+    .finding { position: relative; min-width: 0; padding: clamp(22px, 3vw, 32px); border: 1px solid var(--line); border-left: 6px solid var(--green); background: #fff; box-shadow: var(--shadow); transition: transform .2s var(--tight), box-shadow .2s ease; }
+    .finding:hover, .method-card:hover, .trip-card:hover { transform: translateY(-4px); box-shadow: 0 24px 55px rgba(16,24,32,.13); }
+    .finding-num { color: var(--green-dark); font-family: var(--display); font-size: clamp(40px, 5vw, 62px); font-weight: 900; line-height: .9; }
+    .finding h3 { margin-top: 14px; }
+    .finding p { width: 100%; margin: 12px 0 0; color: var(--muted); }
+    .finding .detail { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; }
+    .detail span { padding: 5px 8px; color: var(--green-dark); background: var(--green-soft); font-family: var(--display); font-size: 11px; font-weight: 800; letter-spacing: .06em; }
+
+    .controls { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(190px, .42fr); gap: 12px; margin-top: 28px; padding: 15px; border: 1px solid var(--line); background: var(--paper); }
+    .control-group { position: relative; }
+    .control-label { display: block; margin: 0 0 6px; color: var(--muted); font-size: 10px; }
+    .control {
+      width: 100%; min-height: 46px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 0;
+      outline: none; color: var(--ink); background: #fff; font-family: var(--display); font-size: 17px; font-weight: 600;
+    }
+    .control:focus { border-color: var(--green); box-shadow: inset 0 0 0 1px var(--green); }
+    .table-shell { margin-top: 16px; border: 1px solid var(--line); background: #fff; box-shadow: var(--shadow); }
+    .table-scroll {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--green) #e4ece8;
+    }
+    .table-scroll::-webkit-scrollbar { width: 7px; height: 7px; }
+    .table-scroll::-webkit-scrollbar-track { background: #e4ece8; }
+    .table-scroll::-webkit-scrollbar-thumb { background: linear-gradient(90deg, var(--green-dark), var(--green-bright)); }
+    table { width: 100%; min-width: 970px; border-collapse: collapse; font-family: var(--display); }
+    thead { color: #fff; background: var(--navy); }
+    th { padding: 13px 12px; border-right: 1px solid rgba(255,255,255,.1); font-size: 11px; font-weight: 800; letter-spacing: .09em; text-align: left; text-transform: uppercase; white-space: nowrap; }
+    th button { appearance: none; padding: 0; border: 0; color: inherit; background: transparent; font-family: inherit; font-size: inherit; font-weight: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
+    th button::after { content: " ↕"; color: var(--green-bright); }
+    th[aria-sort="ascending"] button::after { content: " ↑"; }
+    th[aria-sort="descending"] button::after { content: " ↓"; }
+    td { padding: 13px 12px; border-bottom: 1px solid #e7eeeb; color: var(--ink); font-size: 15px; vertical-align: middle; white-space: nowrap; }
+    tbody tr:nth-child(even) { background: #f8fbf9; }
+    tbody tr:hover { background: var(--green-soft); }
+    tbody tr.podium { background: linear-gradient(90deg, rgba(0,224,154,.12), transparent 58%); }
+    .rank-cell { color: var(--green-dark); font-size: 20px; font-weight: 900; }
+    .team-cell { white-space: normal; min-width: 150px; }
+    .team-cell strong { display: block; font-size: 17px; font-weight: 800; line-height: 1.05; }
+    .team-cell small { display: block; margin-top: 3px; color: var(--muted); font-family: var(--serif); font-size: 11px; }
+    .num-cell { font-variant-numeric: tabular-nums; }
+    .miles-cell strong { color: var(--green-dark); font-size: 18px; }
+    .bar-cell { min-width: 160px; }
+    .mini-bar { position: relative; height: 8px; margin-top: 5px; background: #e4ece8; }
+    .mini-bar i { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--green-dark), var(--green-bright)); transition: width .9s var(--tight); }
+    .table-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; }
+    .table-note { margin: 0; color: var(--muted); font-size: 12px; }
+    .load-button, .switch-button {
+      appearance: none; padding: 10px 17px; border: 2px solid var(--green); color: var(--green-dark); background: #fff;
+      font-family: var(--display); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: color .18s ease, background .18s ease;
+    }
+    .load-button:hover, .switch-button:hover, .switch-button.is-active { color: #fff; background: var(--green-dark); border-color: var(--green-dark); }
+    .empty { padding: 34px; color: var(--muted); text-align: center; font-family: var(--display); font-weight: 700; }
+
+    .comparison-summary { display: grid; grid-template-columns: .72fr 1.28fr; gap: 18px; align-items: stretch; margin-top: 30px; }
+    .change-callout { display: flex; flex-direction: column; justify-content: center; min-height: 230px; padding: clamp(24px, 4vw, 38px); border-left: 6px solid var(--green-bright); background: rgba(255,255,255,.05); }
+    .change-callout strong { color: var(--green-bright); font-family: var(--display); font-size: clamp(62px, 8vw, 96px); font-weight: 900; line-height: .85; }
+    .change-callout h3 { margin-top: 17px; }
+    .change-callout p { width: 100%; margin: 12px 0 0; color: rgba(255,255,255,.64); }
+    .comparison-panel { padding: clamp(20px, 3vw, 30px); border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.035); }
+    .switcher { display: flex; flex-wrap: wrap; gap: 8px; }
+    .section-dark .switch-button { color: #fff; border-color: rgba(255,255,255,.25); background: transparent; }
+    .section-dark .switch-button:hover, .section-dark .switch-button.is-active { color: var(--navy); border-color: var(--green-bright); background: var(--green-bright); }
+    .comparison-list { display: grid; gap: 16px; margin-top: 23px; }
+    .compare-row { display: grid; grid-template-columns: minmax(125px, 1fr) minmax(210px, 2.2fr) 82px; gap: 14px; align-items: center; }
+    .compare-name { min-width: 0; color: #fff; font-family: var(--display); font-size: 17px; font-weight: 800; line-height: 1.05; }
+    .compare-name small { display: block; overflow: hidden; margin-top: 4px; color: rgba(255,255,255,.5); font-family: var(--serif); font-size: 10.5px; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
+    .compare-bars { display: grid; gap: 5px; }
+    .compare-line { display: grid; grid-template-columns: 32px 1fr 58px; gap: 7px; align-items: center; }
+    .compare-year { color: rgba(255,255,255,.48); font-family: var(--display); font-size: 10px; font-weight: 800; }
+    .compare-track { height: 8px; background: rgba(255,255,255,.09); }
+    .compare-fill { display: block; width: 0; height: 100%; background: #77888f; transition: width 1s var(--tight); }
+    .compare-line.current .compare-fill { background: linear-gradient(90deg, var(--green), var(--green-bright)); }
+    .compare-value { color: rgba(255,255,255,.73); font-family: var(--display); font-size: 12px; font-weight: 700; text-align: right; white-space: nowrap; }
+    .compare-delta { font-family: var(--display); font-size: 18px; font-weight: 900; text-align: right; white-space: nowrap; }
+    .compare-delta.up { color: var(--green-bright); }
+    .compare-delta.down { color: #ff9c8f; }
+
+    .conference-bars { display: grid; gap: 13px; margin-top: 32px; }
+    .conference-row { display: grid; grid-template-columns: 32px minmax(150px, 230px) minmax(160px,1fr) 100px; align-items: center; gap: 13px; }
+    .conference-rank { color: var(--muted); font-family: var(--display); font-size: 19px; font-weight: 900; text-align: right; }
+    .conference-name { color: var(--navy); font-family: var(--display); font-size: 18px; font-weight: 800; line-height: 1.05; }
+    .conference-name small { display: block; margin-top: 3px; color: var(--muted); font-family: var(--serif); font-size: 11px; font-weight: 400; }
+    .conference-track { position: relative; height: 25px; border: 1px solid var(--line); background: #edf3f0; }
+    .conference-fill { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--green-dark), var(--green) 70%, var(--green-bright)); transition: width 1.1s var(--tight); }
+    .conference-value { color: var(--green-dark); font-family: var(--display); font-size: 18px; font-weight: 900; text-align: right; white-space: nowrap; }
+
+    .trip-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 30px; }
+    .trip-card { position: relative; display: grid; grid-template-columns: 54px minmax(0,1fr); gap: 18px; min-width: 0; padding: clamp(20px, 2.7vw, 28px); border: 1px solid var(--line); border-left: 6px solid var(--green); background: #fff; box-shadow: var(--shadow); transition: transform .2s var(--tight), box-shadow .2s ease; }
+    .trip-rank { color: var(--green-dark); font-family: var(--display); font-size: 42px; font-weight: 900; line-height: .9; }
+    .trip-card h3 { font-size: clamp(22px, 2.5vw, 28px); line-height: 1.02; }
+    .trip-card p { width: 100%; margin: 9px 0 0; color: var(--muted); font-size: 14px; }
+    .trip-stats { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .trip-stats span { padding: 5px 8px; color: #fff; background: var(--navy); font-family: var(--display); font-size: 11px; font-weight: 800; letter-spacing: .05em; }
+    .international-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-top: clamp(44px, 6vw, 70px); padding-bottom: 14px; border-bottom: 6px solid var(--green); }
+    .international-heading p { width: auto; margin: 0; color: var(--muted); font-size: 14px; text-align: right; }
+    .international-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; margin-top: 18px; border: 1px solid var(--line); background: var(--line); }
+    .international-card { min-width: 0; padding: 20px; background: #fff; }
+    .international-card .flag { color: var(--green-dark); font-family: var(--display); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .international-card h3 { margin-top: 9px; font-size: 23px; }
+    .international-card strong { display: block; margin-top: 13px; color: var(--green-dark); font-family: var(--display); font-size: 28px; line-height: 1; }
+    .international-card p { width: 100%; margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+
+    .methods { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 15px; margin-top: 30px; }
+    .method-card { position: relative; min-width: 0; padding: clamp(21px, 3vw, 28px); border: 1px solid rgba(255,255,255,.13); border-top: 5px solid var(--green); background: rgba(255,255,255,.045); transition: transform .2s var(--tight), box-shadow .2s ease; }
+    .method-card .step { color: var(--green-bright); font-family: var(--display); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .method-card h3 { margin-top: 8px; }
+    .method-card p { width: 100%; margin: 10px 0 0; color: rgba(255,255,255,.67); }
+    .source-note { margin-top: 18px; padding: 20px 22px; border-left: 6px solid var(--green-bright); background: rgba(0,0,0,.15); }
+    .source-note p { width: 100%; margin: 0; color: rgba(255,255,255,.7); }
+    .source-note a { color: var(--green-bright); font-weight: 700; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s var(--tight), transform .65s var(--tight); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .comparison-summary { grid-template-columns: 1fr; }
+      .route-card { min-height: auto; }
+      .route-card h2 { max-width: 18ch; }
+      .route-map { max-width: 760px; margin-inline: auto; }
+      .route-grid { max-width: 760px; margin-inline: auto; }
+    }
+    @media (max-width: 900px) {
+      .international-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .hero-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 680px) {
+      .band-top { align-items: flex-start; flex-direction: column; }
+      .kicker { text-align: left; }
+      .findings, .trip-grid, .methods { grid-template-columns: 1fr; }
+      .controls { grid-template-columns: 1fr; }
+      .conference-row { grid-template-columns: 26px minmax(118px, 150px) minmax(90px,1fr) 76px; gap: 8px; }
+      .conference-name { font-size: 15px; }
+      .conference-value { font-size: 15px; }
+      .compare-row { grid-template-columns: minmax(96px,.8fr) minmax(145px,1.8fr) 68px; gap: 8px; }
+      .international-heading { align-items: flex-start; flex-direction: column; }
+      .international-heading p { width: 100%; text-align: left; }
+    }
+    @media (max-width: 430px) {
+      .hero-stats, .international-grid { grid-template-columns: 1fr; }
+      .route-card { padding: 18px 14px 16px; }
+      .route-top { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .route-card h2 { max-width: none; }
+      .route-total { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .route-map { margin-top: 12px; }
+      .route-grid { grid-template-columns: 1fr; }
+      .route-grid div { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+      .route-meta { margin-top: 0; text-align: right; }
+      .trip-card { grid-template-columns: 42px minmax(0,1fr); gap: 12px; }
+      .trip-rank { font-size: 35px; }
+      .comparison-panel { padding: 16px 12px; }
+      .compare-row { grid-template-columns: minmax(0,1fr) 62px; }
+      .compare-bars { grid-column: 1 / -1; grid-row: 2; }
+      .compare-delta { grid-column: 2; grid-row: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header class="band-dark" id="top">
+    <div class="wrap band-inner">
+      <div class="band-top">
+        <div class="logo-lockup" aria-label="Action Network">
+          <svg class="logo-svg" viewBox="0 0 228 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Action Network">
+            <circle class="logo-circle" cx="13" cy="17" r="11"></circle>
+            <path class="logo-check" d="M8 17.3 l3.4 3.4 l6.8 -7.4"></path>
+            <text class="logo-word" x="30" y="22.4">ACTION NETWORK</text>
+          </svg>
+        </div>
+        <p class="kicker">College Football · 2026 Travel Analysis</p>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <h1>The College Football Teams <span class="accent">Traveling the Most</span> in 2026</h1>
+          <p class="dek">A college football schedule is also a travel itinerary. Action Network measured every regular-season road and neutral-site trip to find which teams will cover the most ground, cross the most time zones, and carry the heaviest travel load in 2026.</p>
+          <p class="byline"><b>Action Network Research</b><span>·</span><span>Updated August 3, 2026</span><span>·</span><span>8 min read</span></p>
+          <div class="hero-stats" aria-label="Study summary">
+            <div class="hero-stat"><strong><span class="count-up" data-target="1103808" data-comma="true">0</span></strong><span class="stat-label">Total Travel Miles</span></div>
+            <div class="hero-stat"><strong><span class="count-up" data-target="138">0</span></strong><span class="stat-label">Teams Analyzed</span></div>
+            <div class="hero-stat"><strong><span class="count-up" data-target="170">0</span></strong><span class="stat-label">Long-Haul Trips</span></div>
+            <div class="hero-stat"><strong>+<span class="count-up" data-target="22761" data-comma="true">0</span></strong><span class="stat-label">Miles vs. 2025</span></div>
+          </div>
+        </div>
+        <aside class="route-card" aria-label="Top-ranked team">
+          <div class="route-top"><span class="mini-label">No. 1 in Total Miles</span><span class="rank-tag">Mountain West</span></div>
+          <h2>Hawai'i's Coast-to-Coast Schedule</h2>
+          <div class="route-total"><strong>37,221</strong><span>round-trip miles</span></div>
+          <svg class="route-map" viewBox="0 0 470 190" role="img" aria-label="Hawai'i's six 2026 road destinations positioned by round-trip distance from Honolulu">
+            <path class="grid" d="M54 14V164M151 14V164M248 14V164M345 14V164M442 14V164"></path>
+            <path class="axis" d="M54 164H442"></path>
+            <path class="flight-path" d="M54 152 Q137 115 240 136"></path>
+            <path class="flight-path" d="M54 152 Q150 91 253 114"></path>
+            <path class="flight-path" d="M54 152 Q169 67 280 92"></path>
+            <path class="flight-path" d="M54 152 Q185 45 304 70"></path>
+            <path class="flight-path" d="M54 152 Q194 25 312 48"></path>
+            <path class="flight-path" d="M54 152 Q227 2 379 26"></path>
+            <circle class="origin" cx="54" cy="152" r="6"></circle>
+            <circle class="destination" cx="240" cy="136" r="4"></circle>
+            <circle class="destination" cx="253" cy="114" r="4"></circle>
+            <circle class="destination" cx="280" cy="92" r="4"></circle>
+            <circle class="destination" cx="304" cy="70" r="4"></circle>
+            <circle class="destination" cx="312" cy="48" r="4"></circle>
+            <circle class="destination" cx="379" cy="26" r="4"></circle>
+            <text class="distance-label" x="8" y="141">HONOLULU</text>
+            <text class="distance-label" x="248" y="139">STANFORD 4,799</text>
+            <text class="distance-label" x="261" y="117">RENO 5,130</text>
+            <text class="distance-label" x="288" y="95">TEMPE 5,825</text>
+            <text class="distance-label" x="312" y="73">EL PASO 6,448</text>
+            <text class="distance-label" x="320" y="51">LARAMIE 6,643</text>
+            <text class="distance-label" x="387" y="29">DEKALB 8,377</text>
+            <text class="tick-label" x="54" y="176">0</text>
+            <text class="tick-label" x="151" y="176">2.5K</text>
+            <text class="tick-label" x="248" y="176">5K</text>
+            <text class="tick-label" x="345" y="176">7.5K</text>
+            <text class="axis-title" x="248" y="188">ROUND-TRIP DISTANCE FROM HONOLULU, IN MILES</text>
+          </svg>
+          <div class="route-grid">
+            <div><b>6</b><span class="route-meta">Road Games</span></div>
+            <div><b>6</b><span class="route-meta">Long-Haul Trips</span></div>
+            <div><b>20</b><span class="route-meta">Time Zones Crossed</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <span class="menu-sentinel" id="section-menu" aria-hidden="true"></span>
+  <nav class="jump-nav" aria-label="Page sections">
+    <div class="wrap jump-inner">
+      <button class="chip is-active" type="button" data-jump="key-findings">Key Findings</button>
+      <button class="chip" type="button" data-jump="team-rankings">Team Rankings</button>
+      <button class="chip" type="button" data-jump="year-comparison">2025 vs. 2026</button>
+      <button class="chip" type="button" data-jump="conference-comparison">Conference Comparison</button>
+      <button class="chip" type="button" data-jump="longest-trips">Longest Trips</button>
+      <button class="chip" type="button" data-jump="methodology">Methodology</button>
+    </div>
+  </nav>
+
+  <main>
+    <span class="scroll-sentinel" id="key-findings" aria-hidden="true"></span>
+    <section class="section section-white" data-section="key-findings">
+      <div class="wrap reveal">
+        <p class="section-kicker">The Travel Picture</p>
+        <h2>Four Findings That Define the 2026 Schedule</h2>
+        <div class="rule"></div>
+        <p class="section-intro">Distance alone does not tell the whole story. The biggest travel schedules combine long-haul mileage, repeated time-zone changes, and road games that arrive in quick succession.</p>
+        <div class="findings">
+          <article class="finding">
+            <div class="finding-num">37,221</div>
+            <h3>Hawai'i Goes the Distance</h3>
+            <p>Hawai'i travels farther than any other team. All six road games qualify as long-haul trips, and the Rainbow Warriors cross a combined 20 time zones.</p>
+            <div class="detail"><span>No. 1 in Total Miles</span><span>6,204 Miles per Trip</span></div>
+          </article>
+          <article class="finding">
+            <div class="finding-num">98.35</div>
+            <h3>Stanford Carries the Heaviest Overall Load</h3>
+            <p>Stanford ranks second in total miles but first on the secondary Travel Burden Score, powered by five long-haul trips and two back-to-back road games.</p>
+            <div class="detail"><span>No. 1 Burden Rank</span><span>21,755 Total Miles</span></div>
+          </article>
+          <article class="finding">
+            <div class="finding-num">+9,466</div>
+            <h3>Arizona State Makes the Biggest Jump</h3>
+            <p>The Sun Devils add more mileage than any returning team compared with 2025. A 10,518-mile round trip to Wembley Stadium accounts for much of the increase.</p>
+            <div class="detail"><span>+106.2% vs. 2025</span><span>London Neutral-Site Game</span></div>
+          </article>
+          <article class="finding">
+            <div class="finding-num">14,789</div>
+            <h3>The Mountain West Leads Per Team</h3>
+            <p>Mountain West teams average more travel miles than any other conference, nearly 5,000 miles per team above the second-place Big 12.</p>
+            <div class="detail"><span>10 Teams</span><span>27 Long-Haul Trips</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-return on-white">
+      <button class="return-button" type="button" data-back-to-sections><span class="up" aria-hidden="true">&uarr;</span> Back to Sections</button>
+    </div>
+
+    <span class="scroll-sentinel" id="team-rankings" aria-hidden="true"></span>
+    <section class="section" data-section="team-rankings">
+      <div class="wrap reveal">
+        <p class="section-kicker">Full Ranking</p>
+        <h2>See How Every Team's Travel Schedule Stacks Up</h2>
+        <div class="rule"></div>
+        <p class="section-intro">Search for a team, filter by conference, or sort the table by any displayed measure. Total Travel Miles determines the main ranking.</p>
+        <div class="controls">
+          <label class="control-group"><span class="control-label">Search by Team</span><input class="control" id="team-search" type="search" placeholder="Start typing a team name" autocomplete="off"></label>
+          <label class="control-group"><span class="control-label">Filter by Conference</span><select class="control" id="conference-filter"><option value="">All Conferences</option></select></label>
+        </div>
+        <div class="table-shell">
+          <div class="table-scroll" tabindex="0" aria-label="Scrollable college football travel ranking">
+            <table>
+              <thead><tr>
+                <th data-key="rank" aria-sort="ascending"><button type="button">Rank</button></th>
+                <th data-key="team"><button type="button">Team</button></th>
+                <th data-key="conference"><button type="button">Conference</button></th>
+                <th data-key="miles"><button type="button">Total Travel Miles</button></th>
+                <th data-key="average"><button type="button">Average Miles per Trip</button></th>
+                <th data-key="longHaul"><button type="button">Long-Haul Trips</button></th>
+                <th data-key="timeZones"><button type="button">Time Zones Crossed</button></th>
+                <th data-key="burden"><button type="button">Travel Burden Score</button></th>
+              </tr></thead>
+              <tbody id="team-body"></tbody>
+            </table>
+          </div>
+          <div class="table-foot">
+            <p class="table-note" id="team-count">Showing 15 of 138 teams</p>
+            <button class="load-button" id="load-more" type="button">Load 15 More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-return">
+      <button class="return-button" type="button" data-back-to-sections><span class="up" aria-hidden="true">&uarr;</span> Back to Sections</button>
+    </div>
+
+    <span class="scroll-sentinel" id="year-comparison" aria-hidden="true"></span>
+    <section class="section section-dark" data-section="year-comparison">
+      <div class="wrap reveal">
+        <p class="section-kicker">Year-over-Year Change</p>
+        <h2>College Football Adds 22,761 Travel Miles</h2>
+        <div class="rule"></div>
+        <p class="section-intro">Across all 138 teams, regular-season travel rises from 1,081,047 miles in 2025 to 1,103,808 miles in 2026. Use the switcher to see the largest team-level changes.</p>
+        <div class="comparison-summary">
+          <aside class="change-callout">
+            <strong>+2.1%</strong>
+            <h3>More Miles Across the Sport</h3>
+            <p>The same schedule source, distance formula, and venue rules were applied to both seasons for a consistent comparison.</p>
+          </aside>
+          <div class="comparison-panel">
+            <div class="switcher" aria-label="Change direction">
+              <button class="switch-button is-active" type="button" data-mode="increase">Biggest Increases</button>
+              <button class="switch-button" type="button" data-mode="decrease">Biggest Decreases</button>
+            </div>
+            <div class="comparison-list" id="comparison-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-return on-dark">
+      <button class="return-button" type="button" data-back-to-sections><span class="up" aria-hidden="true">&uarr;</span> Back to Sections</button>
+    </div>
+
+    <span class="scroll-sentinel" id="conference-comparison" aria-hidden="true"></span>
+    <section class="section section-white" data-section="conference-comparison">
+      <div class="wrap reveal">
+        <p class="section-kicker">Conference Comparison</p>
+        <h2>The Mountain West Travels the Most Per Team</h2>
+        <div class="rule"></div>
+        <p class="section-intro">Conference rankings use average miles per team, which makes conferences of different sizes comparable. The Big 12 logs the highest overall conference total at 158,027 miles.</p>
+        <div class="conference-bars" id="conference-bars"></div>
+      </div>
+    </section>
+
+    <div class="section-return on-white">
+      <button class="return-button" type="button" data-back-to-sections><span class="up" aria-hidden="true">&uarr;</span> Back to Sections</button>
+    </div>
+
+    <span class="scroll-sentinel" id="longest-trips" aria-hidden="true"></span>
+    <section class="section" data-section="longest-trips">
+      <div class="wrap reveal">
+        <p class="section-kicker">The Season's Longest Journeys</p>
+        <h2>London and Dublin Headline the Biggest Trips</h2>
+        <div class="rule"></div>
+        <p class="section-intro">The two international neutral-site games produce four of the six longest team journeys. Arizona State's trip from Tempe to London is the longest single round trip in the analysis.</p>
+        <div class="trip-grid" id="trip-grid"></div>
+        <div class="international-heading">
+          <h3>Four International Team Journeys</h3>
+          <p>Two games, four traveling teams, and 35,438 combined round-trip miles.</p>
+        </div>
+        <div class="international-grid" id="international-grid"></div>
+      </div>
+    </section>
+
+    <div class="section-return">
+      <button class="return-button" type="button" data-back-to-sections><span class="up" aria-hidden="true">&uarr;</span> Back to Sections</button>
+    </div>
+
+    <span class="scroll-sentinel" id="methodology" aria-hidden="true"></span>
+    <section class="section section-dark" data-section="methodology">
+      <div class="wrap reveal">
+        <p class="section-kicker">Methodology</p>
+        <h2>How the Travel Ranking Was Calculated</h2>
+        <div class="rule"></div>
+        <p class="section-intro">The analysis covers regular-season travel for 138 Football Bowl Subdivision teams in 2025 and 2026.</p>
+        <div class="methods">
+          <article class="method-card"><span class="step">Step 1</span><h3>Build Each Team's Travel Schedule</h3><p>Road and neutral-site games were taken from CollegeFootballData. Ordinary road teams travel from their home stadium to the game venue, while both teams travel to a neutral site.</p></article>
+          <article class="method-card"><span class="step">Step 2</span><h3>Match Home and Game Venues</h3><p>Home stadiums, game venues, and geographic coordinates were matched with CollegeFootballData team and venue records.</p></article>
+          <article class="method-card"><span class="step">Step 3</span><h3>Calculate Round-Trip Distance</h3><p>Straight-line distance between stadium coordinates was calculated with the Haversine formula, then doubled to represent the outbound and return journey.</p></article>
+          <article class="method-card"><span class="step">Step 4</span><h3>Measure Travel Conditions</h3><p>A trip counts as long-haul when the destination is more than 1,000 miles from the team's home stadium. Road games no more than nine days apart count as back-to-back.</p></article>
+          <article class="method-card"><span class="step">Step 5</span><h3>Rank Teams by Total Miles</h3><p>The main ranking orders teams by total 2026 round-trip miles. A secondary Travel Burden Score combines mileage, average trip length, time-zone changes, long-haul trips, and back-to-back travel.</p></article>
+          <article class="method-card"><span class="step">Important Context</span><h3>What the Mileage Does Not Show</h3><p>The figures represent straight-line estimates. They do not reproduce exact flight paths, driving routes, connections, or a team's actual travel arrangements.</p></article>
+        </div>
+        <div class="source-note"><p><strong>Source:</strong> Schedules, team records, venue records, and coordinates were taken from <a href="https://collegefootballdata.com/" target="_blank" rel="nofollow noopener">CollegeFootballData</a>. Both seasons use the same source and calculation rules.</p></div>
+      </div>
+    </section>
+
+    <div class="section-return on-dark">
+      <button class="return-button" type="button" data-back-to-sections><span class="up" aria-hidden="true">&uarr;</span> Back to Sections</button>
+    </div>
+  </main>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const DATA = {"teams":[{"rank":1,"burdenRank":5,"team":"Hawai'i","conference":"Mountain West","games":6,"miles":37221.0,"average":6203.5,"longHaul":6,"international":0,"timeZones":20,"maxTimeZoneChange":5,"backToBack":0,"neutralSites":0,"longestOpponent":"Northern Illinois","longestVenue":"Huskie Stadium","longestLocation":"DeKalb, Illinois","longestDate":"2026-10-24","longestMiles":8376.7,"burden":91.85},{"rank":2,"burdenRank":1,"team":"Stanford","conference":"Atlantic Coast Conference","games":6,"miles":21755.2,"average":3625.9,"longHaul":5,"international":0,"timeZones":15,"maxTimeZoneChange":3,"backToBack":2,"neutralSites":0,"longestOpponent":"Duke","longestVenue":"Wallace Wade Stadium","longestLocation":"Durham, North Carolina","longestDate":"2026-09-19","longestMiles":4749.4,"burden":98.35},{"rank":3,"burdenRank":7,"team":"Sacramento State","conference":"Mid-American","games":6,"miles":20865.2,"average":3477.5,"longHaul":5,"international":0,"timeZones":14,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Hawai'i","longestVenue":"Clarence T.C. Ching Athletics Complex","longestLocation":"Honolulu, Hawaii","longestDate":"2026-11-28","longestMiles":4923.1,"burden":90.33},{"rank":4,"burdenRank":2,"team":"North Dakota State","conference":"Mountain West","games":6,"miles":18907.1,"average":3151.2,"longHaul":4,"international":0,"timeZones":12,"maxTimeZoneChange":4,"backToBack":1,"neutralSites":0,"longestOpponent":"Hawai'i","longestVenue":"Clarence T.C. Ching Athletics Complex","longestLocation":"Honolulu, Hawaii","longestDate":"2026-11-15","longestMiles":7599.9,"burden":93.26},{"rank":5,"burdenRank":6,"team":"Arizona State","conference":"Big 12","games":6,"miles":18375.4,"average":3062.6,"longHaul":2,"international":1,"timeZones":15,"maxTimeZoneChange":8,"backToBack":1,"neutralSites":1,"longestOpponent":"Kansas","longestVenue":"Wembley Stadium","longestLocation":"London, United Kingdom","longestDate":"2026-09-19","longestMiles":10518.1,"burden":91.11},{"rank":6,"burdenRank":3,"team":"California","conference":"Atlantic Coast Conference","games":5,"miles":18100.6,"average":3620.1,"longHaul":4,"international":0,"timeZones":11,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Syracuse","longestVenue":"JMA Wireless Dome","longestLocation":"Syracuse, New York","longestDate":"2026-09-12","longestMiles":4839.6,"burden":92.97},{"rank":7,"burdenRank":11,"team":"New Mexico State","conference":"Conference USA","games":6,"miles":17763.0,"average":2960.5,"longHaul":4,"international":0,"timeZones":11,"maxTimeZoneChange":4,"backToBack":0,"neutralSites":0,"longestOpponent":"Hawai'i","longestVenue":"Clarence T.C. Ching Athletics Complex","longestLocation":"Honolulu, Hawaii","longestDate":"2026-09-12","longestMiles":6420.3,"burden":87.72},{"rank":8,"burdenRank":10,"team":"USC","conference":"Big Ten","games":5,"miles":16288.6,"average":3257.7,"longHaul":4,"international":0,"timeZones":11,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Rutgers","longestVenue":"SHI Stadium","longestLocation":"Piscataway, New Jersey","longestDate":"2026-09-19","longestMiles":4851.6,"burden":87.97},{"rank":9,"burdenRank":12,"team":"Oregon","conference":"Big Ten","games":5,"miles":15960.7,"average":3192.1,"longHaul":4,"international":0,"timeZones":10,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Ohio State","longestVenue":"Ohio Stadium","longestLocation":"Columbus, Ohio","longestDate":"2026-11-07","longestMiles":4107.8,"burden":87.23},{"rank":10,"burdenRank":4,"team":"UNLV","conference":"Mountain West","games":6,"miles":14200.7,"average":2366.8,"longHaul":3,"international":0,"timeZones":10,"maxTimeZoneChange":3,"backToBack":2,"neutralSites":0,"longestOpponent":"Hawai'i","longestVenue":"Clarence T.C. Ching Athletics Complex","longestLocation":"Honolulu, Hawaii","longestDate":"2026-09-06","longestMiles":5505.5,"burden":92.48},{"rank":11,"burdenRank":8,"team":"San José State","conference":"Mountain West","games":6,"miles":13660.6,"average":2276.8,"longHaul":2,"international":0,"timeZones":8,"maxTimeZoneChange":3,"backToBack":2,"neutralSites":0,"longestOpponent":"Hawai'i","longestVenue":"Clarence T.C. Ching Athletics Complex","longestLocation":"Honolulu, Hawaii","longestDate":"2026-10-03","longestMiles":4824.8,"burden":90.13},{"rank":12,"burdenRank":14,"team":"UCLA","conference":"Big Ten","games":5,"miles":13636.0,"average":2727.2,"longHaul":3,"international":0,"timeZones":8,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Maryland","longestVenue":"SECU Stadium","longestLocation":"College Park, Maryland","longestDate":"2026-09-26","longestMiles":4583.4,"burden":84.58},{"rank":13,"burdenRank":15,"team":"Kansas","conference":"Big 12","games":6,"miles":13631.3,"average":2271.9,"longHaul":1,"international":1,"timeZones":8,"maxTimeZoneChange":6,"backToBack":1,"neutralSites":1,"longestOpponent":"Arizona State","longestVenue":"Wembley Stadium","longestLocation":"London, United Kingdom","longestDate":"2026-09-19","longestMiles":8735.5,"burden":83.53},{"rank":14,"burdenRank":9,"team":"Northern Illinois","conference":"Mountain West","games":7,"miles":13565.9,"average":1938.0,"longHaul":3,"international":0,"timeZones":8,"maxTimeZoneChange":2,"backToBack":2,"neutralSites":0,"longestOpponent":"San José State","longestVenue":"CEFCU Stadium","longestLocation":"San Jose, California","longestDate":"2026-11-07","longestMiles":3556.4,"burden":88.57},{"rank":15,"burdenRank":18,"team":"TCU","conference":"Big 12","games":5,"miles":13257.5,"average":2651.5,"longHaul":2,"international":1,"timeZones":8,"maxTimeZoneChange":6,"backToBack":0,"neutralSites":1,"longestOpponent":"North Carolina","longestVenue":"Aviva Stadium","longestLocation":"Dublin, Ireland","longestDate":"2026-08-29","longestMiles":8974.7,"burden":82.16},{"rank":16,"burdenRank":13,"team":"Nevada","conference":"Mountain West","games":6,"miles":12737.6,"average":2122.9,"longHaul":3,"international":0,"timeZones":7,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Middle Tennessee","longestVenue":"Johnny \"Red\" Floyd Stadium","longestLocation":"Murfreesboro, Tennessee","longestDate":"2026-09-19","longestMiles":3671.4,"burden":85.29},{"rank":17,"burdenRank":17,"team":"Washington","conference":"Big Ten","games":5,"miles":12446.0,"average":2489.2,"longHaul":3,"international":0,"timeZones":8,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Michigan State","longestVenue":"Spartan Stadium","longestLocation":"East Lansing, Michigan","longestDate":"2026-11-14","longestMiles":3707.0,"burden":82.66},{"rank":18,"burdenRank":21,"team":"Rice","conference":"American Athletic","games":6,"miles":12292.9,"average":2048.8,"longHaul":3,"international":0,"timeZones":6,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"Fresno State","longestVenue":"Valley Children's Stadium","longestLocation":"Fresno, California","longestDate":"2026-09-27","longestMiles":2969.4,"burden":79.89},{"rank":19,"burdenRank":16,"team":"New Mexico","conference":"Mountain West","games":6,"miles":12038.9,"average":2006.5,"longHaul":1,"international":0,"timeZones":7,"maxTimeZoneChange":4,"backToBack":2,"neutralSites":0,"longestOpponent":"Hawai'i","longestVenue":"Clarence T.C. Ching Athletics Complex","longestLocation":"Honolulu, Hawaii","longestDate":"2026-10-17","longestMiles":6444.9,"burden":83.01},{"rank":20,"burdenRank":37,"team":"Boston College","conference":"Atlantic Coast Conference","games":6,"miles":11645.8,"average":1941.0,"longHaul":2,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"SMU","longestVenue":"Gerald J. Ford Stadium","longestLocation":"University Park, Texas","longestDate":"2026-10-03","longestMiles":3080.8,"burden":70.53},{"rank":21,"burdenRank":27,"team":"Miami","conference":"Atlantic Coast Conference","games":5,"miles":11442.6,"average":2288.5,"longHaul":2,"international":0,"timeZones":3,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Stanford","longestVenue":"Stanford Stadium","longestLocation":"Stanford, California","longestDate":"2026-09-05","longestMiles":5130.8,"burden":76.27},{"rank":22,"burdenRank":19,"team":"UConn","conference":"Football Bowl Subdivision Independents","games":5,"miles":10800.1,"average":2160.0,"longHaul":3,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Air Force","longestVenue":"Falcon Stadium","longestLocation":"Colorado Springs, Colorado","longestDate":"2026-10-31","longestMiles":3393.7,"burden":81.87},{"rank":23,"burdenRank":20,"team":"UCF","conference":"Big 12","games":5,"miles":10780.2,"average":2156.0,"longHaul":3,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Colorado","longestVenue":"Folsom Field","longestLocation":"Boulder, Colorado","longestDate":"2026-11-28","longestMiles":3152.4,"burden":81.39},{"rank":24,"burdenRank":35,"team":"Navy","conference":"American Athletic","games":7,"miles":10769.8,"average":1538.5,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":2,"longestOpponent":"Air Force","longestVenue":"Falcon Stadium","longestLocation":"Colorado Springs, Colorado","longestDate":"2026-10-03","longestMiles":3031.0,"burden":72.63},{"rank":25,"burdenRank":22,"team":"Memphis","conference":"American Athletic","games":6,"miles":10504.2,"average":1750.7,"longHaul":2,"international":0,"timeZones":6,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Boise State","longestVenue":"Albertsons Stadium","longestLocation":"Boise, Idaho","longestDate":"2026-09-12","longestMiles":3020.2,"burden":78.62},{"rank":26,"burdenRank":24,"team":"Houston","conference":"Big 12","games":6,"miles":10326.6,"average":1721.1,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Utah","longestVenue":"Rice-Eccles Stadium","longestLocation":"Salt Lake City, Utah","longestDate":"2026-10-24","longestMiles":2399.9,"burden":77.34},{"rank":27,"burdenRank":42,"team":"Florida Atlantic","conference":"American Athletic","games":6,"miles":10254.2,"average":1709.0,"longHaul":3,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Tulsa","longestVenue":"Chapman Stadium","longestLocation":"Tulsa, Oklahoma","longestDate":"2026-11-14","longestMiles":2302.5,"burden":68.22},{"rank":28,"burdenRank":26,"team":"UTEP","conference":"Mountain West","games":6,"miles":10237.0,"average":1706.2,"longHaul":3,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Michigan","longestVenue":"Michigan Stadium","longestLocation":"Ann Arbor, Michigan","longestDate":"2026-09-19","longestMiles":2886.1,"burden":76.87},{"rank":29,"burdenRank":25,"team":"Colorado","conference":"Big 12","games":6,"miles":10209.4,"average":1701.6,"longHaul":2,"international":0,"timeZones":7,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Georgia Tech","longestVenue":"Bobby Dodd Stadium","longestLocation":"Atlanta, Georgia","longestDate":"2026-09-04","longestMiles":2455.5,"burden":76.99},{"rank":30,"burdenRank":23,"team":"SMU","conference":"Atlantic Coast Conference","games":5,"miles":10203.4,"average":2040.7,"longHaul":2,"international":0,"timeZones":6,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Stanford","longestVenue":"Stanford Stadium","longestLocation":"Stanford, California","longestDate":"2026-11-28","longestMiles":2927.9,"burden":78.59},{"rank":31,"burdenRank":32,"team":"West Virginia","conference":"Big 12","games":5,"miles":10159.8,"average":2032.0,"longHaul":3,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":1,"longestOpponent":"Utah","longestVenue":"Rice-Eccles Stadium","longestLocation":"Salt Lake City, Utah","longestDate":"2026-11-28","longestMiles":3350.9,"burden":74.0},{"rank":32,"burdenRank":40,"team":"Virginia Tech","conference":"Atlantic Coast Conference","games":6,"miles":10149.4,"average":1691.6,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"California","longestVenue":"California Memorial Stadium","longestLocation":"Berkeley, California","longestDate":"2026-10-10","longestMiles":4545.2,"burden":68.86},{"rank":33,"burdenRank":29,"team":"Army","conference":"American Athletic","games":6,"miles":10006.7,"average":1667.8,"longHaul":3,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":1,"longestOpponent":"Rice","longestVenue":"Rice Stadium","longestLocation":"Houston, Texas","longestDate":"2026-11-28","longestMiles":2887.9,"burden":75.49},{"rank":34,"burdenRank":29,"team":"Oregon State","conference":"Pac-12","games":5,"miles":9971.6,"average":1994.3,"longHaul":2,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Houston","longestVenue":"TDECU Stadium","longestLocation":"Houston, Texas","longestDate":"2026-09-05","longestMiles":3668.4,"burden":75.49},{"rank":35,"burdenRank":34,"team":"Arizona","conference":"Big 12","games":5,"miles":9759.7,"average":1951.9,"longHaul":2,"international":0,"timeZones":7,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"West Virginia","longestVenue":"Milan Puskar Stadium","longestLocation":"Morgantown, West Virginia","longestDate":"2026-10-10","longestMiles":3595.8,"burden":72.86},{"rank":36,"burdenRank":39,"team":"North Carolina","conference":"Atlantic Coast Conference","games":6,"miles":9686.1,"average":1614.3,"longHaul":1,"international":1,"timeZones":5,"maxTimeZoneChange":5,"backToBack":1,"neutralSites":1,"longestOpponent":"TCU","longestVenue":"Aviva Stadium","longestLocation":"Dublin, Ireland","longestDate":"2026-08-29","longestMiles":7209.4,"burden":69.33},{"rank":37,"burdenRank":31,"team":"Washington State","conference":"Pac-12","games":6,"miles":9381.0,"average":1563.5,"longHaul":2,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":2,"neutralSites":0,"longestOpponent":"Texas State","longestVenue":"Bobcat Stadium (TX)","longestLocation":"San Marcos, Texas","longestDate":"2026-11-21","longestMiles":3107.9,"burden":74.37},{"rank":38,"burdenRank":28,"team":"Cincinnati","conference":"Big 12","games":5,"miles":9300.8,"average":1860.2,"longHaul":2,"international":0,"timeZones":7,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Arizona","longestVenue":"Arizona Stadium","longestLocation":"Tucson, Arizona","longestDate":"2026-10-03","longestMiles":3103.5,"burden":75.51},{"rank":39,"burdenRank":36,"team":"Western Kentucky","conference":"Conference USA","games":7,"miles":9169.4,"average":1309.9,"longHaul":2,"international":0,"timeZones":6,"maxTimeZoneChange":2,"backToBack":2,"neutralSites":0,"longestOpponent":"Nevada","longestVenue":"Mackay Stadium","longestLocation":"Reno, Nevada","longestDate":"2026-09-06","longestMiles":3615.8,"burden":72.46},{"rank":40,"burdenRank":45,"team":"San Diego State","conference":"Pac-12","games":5,"miles":9048.1,"average":1809.6,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Toledo","longestVenue":"Glass Bowl","longestLocation":"Toledo, Ohio","longestDate":"2026-09-26","longestMiles":3857.6,"burden":66.14},{"rank":41,"burdenRank":38,"team":"Maryland","conference":"Big Ten","games":5,"miles":9043.8,"average":1808.8,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"USC","longestVenue":"Los Angeles Memorial Coliseum","longestLocation":"Los Angeles, California","longestDate":"2026-11-21","longestMiles":4603.5,"burden":69.84},{"rank":42,"burdenRank":49,"team":"Delaware","conference":"Conference USA","games":6,"miles":9002.6,"average":1500.4,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"New Mexico State","longestVenue":"Aggie Memorial Stadium","longestLocation":"Las Cruces, New Mexico","longestDate":"2026-11-21","longestMiles":3592.9,"burden":62.45},{"rank":43,"burdenRank":44,"team":"Wake Forest","conference":"Atlantic Coast Conference","games":6,"miles":8890.4,"average":1481.7,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":2,"neutralSites":0,"longestOpponent":"California","longestVenue":"California Memorial Stadium","longestLocation":"Berkeley, California","longestDate":"2026-10-17","longestMiles":4601.7,"burden":66.43},{"rank":44,"burdenRank":41,"team":"Ohio State","conference":"Big Ten","games":5,"miles":8837.6,"average":1767.5,"longHaul":2,"international":0,"timeZones":6,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"USC","longestVenue":"Los Angeles Memorial Coliseum","longestLocation":"Los Angeles, California","longestDate":"2026-10-31","longestMiles":3951.8,"burden":68.51},{"rank":45,"burdenRank":46,"team":"Utah","conference":"Big 12","games":5,"miles":8616.3,"average":1723.3,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Cincinnati","longestVenue":"Nippert Stadium","longestLocation":"Cincinnati, Ohio","longestDate":"2026-10-31","longestMiles":2892.7,"burden":65.49},{"rank":46,"burdenRank":47,"team":"Baylor","conference":"Big 12","games":6,"miles":8591.6,"average":1431.9,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":1,"longestOpponent":"BYU","longestVenue":"LaVell Edwards Stadium","longestLocation":"Provo, Utah","longestDate":"2026-11-14","longestMiles":2018.7,"burden":64.47},{"rank":47,"burdenRank":43,"team":"Pittsburgh","conference":"Atlantic Coast Conference","games":5,"miles":8587.3,"average":1717.5,"longHaul":2,"international":0,"timeZones":3,"maxTimeZoneChange":3,"backToBack":2,"neutralSites":0,"longestOpponent":"California","longestVenue":"California Memorial Stadium","longestLocation":"Berkeley, California","longestDate":"2026-11-28","longestMiles":4496.3,"burden":67.79},{"rank":48,"burdenRank":33,"team":"Texas State","conference":"Pac-12","games":4,"miles":8541.4,"average":2135.3,"longHaul":3,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Oregon State","longestVenue":"Reser Stadium","longestLocation":"Corvallis, Oregon","longestDate":"2026-11-08","longestMiles":3424.8,"burden":73.1},{"rank":49,"burdenRank":55,"team":"Massachusetts","conference":"Mid-American","games":6,"miles":8436.0,"average":1406.0,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Sacramento State","longestVenue":"Hornet Stadium","longestLocation":"Sacramento, California","longestDate":"2026-09-26","longestMiles":5095.6,"burden":58.15},{"rank":50,"burdenRank":48,"team":"James Madison","conference":"Sun Belt","games":6,"miles":8361.2,"average":1393.5,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":2,"neutralSites":0,"longestOpponent":"San Diego State","longestVenue":"Snapdragon Stadium","longestLocation":"San Diego, California","longestDate":"2026-09-20","longestMiles":4335.8,"burden":63.28},{"rank":51,"burdenRank":58,"team":"Tulane","conference":"American Athletic","games":6,"miles":8327.3,"average":1387.9,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Army","longestVenue":"Michie Stadium","longestLocation":"West Point, New York","longestDate":"2026-10-10","longestMiles":2398.6,"burden":55.56},{"rank":52,"burdenRank":59,"team":"Kent State","conference":"Mid-American","games":7,"miles":8283.6,"average":1183.4,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Sacramento State","longestVenue":"Hornet Stadium","longestLocation":"Sacramento, California","longestDate":"2026-10-31","longestMiles":4232.7,"burden":54.57},{"rank":53,"burdenRank":53,"team":"Iowa State","conference":"Big 12","games":5,"miles":8251.9,"average":1650.4,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"Arizona","longestVenue":"Arizona Stadium","longestLocation":"Tucson, Arizona","longestDate":"2026-10-24","longestMiles":2330.9,"burden":60.13},{"rank":54,"burdenRank":57,"team":"BYU","conference":"Big 12","games":5,"miles":8215.1,"average":1643.0,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"UCF","longestVenue":"FBC Mortgage Stadium","longestLocation":"Orlando, Florida","longestDate":"2026-10-24","longestMiles":3801.7,"burden":57.05},{"rank":55,"burdenRank":69,"team":"Sam Houston","conference":"Conference USA","games":6,"miles":8185.0,"average":1364.2,"longHaul":1,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Liberty","longestVenue":"Williams Stadium (VA)","longestLocation":"Lynchburg, Virginia","longestDate":"2026-10-08","longestMiles":2082.8,"burden":49.51},{"rank":56,"burdenRank":52,"team":"Clemson","conference":"Atlantic Coast Conference","games":5,"miles":7962.5,"average":1592.5,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"California","longestVenue":"California Memorial Stadium","longestLocation":"Berkeley, California","longestDate":"2026-09-26","longestMiles":4379.8,"burden":60.16},{"rank":57,"burdenRank":54,"team":"Ohio","conference":"Mid-American","games":6,"miles":7922.5,"average":1320.4,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Sacramento State","longestVenue":"Hornet Stadium","longestLocation":"Sacramento, California","longestDate":"2026-10-17","longestMiles":4193.9,"burden":59.58},{"rank":58,"burdenRank":50,"team":"Wyoming","conference":"Mountain West","games":6,"miles":7823.2,"average":1303.9,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":2,"neutralSites":0,"longestOpponent":"Central Michigan","longestVenue":"Kelly/Shorts Stadium","longestLocation":"Mount Pleasant, Michigan","longestDate":"2026-09-19","longestMiles":2138.0,"burden":62.16},{"rank":59,"burdenRank":51,"team":"Nebraska","conference":"Big Ten","games":5,"miles":7767.9,"average":1553.6,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Oregon","longestVenue":"Autzen Stadium","longestLocation":"Eugene, Oregon","longestDate":"2026-10-17","longestMiles":2713.5,"burden":61.36},{"rank":60,"burdenRank":74,"team":"Missouri State","conference":"Conference USA","games":6,"miles":7528.2,"average":1254.7,"longHaul":1,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Florida International","longestVenue":"Pitbull Stadium","longestLocation":"Miami, Florida","longestDate":"2026-11-07","longestMiles":2189.6,"burden":46.87},{"rank":61,"burdenRank":62,"team":"Air Force","conference":"Mountain West","games":5,"miles":7501.6,"average":1500.3,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"Army","longestVenue":"Michie Stadium","longestLocation":"West Point, New York","longestDate":"2026-11-08","longestMiles":3259.0,"burden":53.61},{"rank":62,"burdenRank":75,"team":"South Florida","conference":"American Athletic","games":5,"miles":7472.8,"average":1494.6,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Army","longestVenue":"Michie Stadium","longestLocation":"West Point, New York","longestDate":"2026-09-12","longestMiles":2089.3,"burden":46.39},{"rank":63,"burdenRank":68,"team":"Troy","conference":"Sun Belt","games":6,"miles":7432.2,"average":1238.7,"longHaul":1,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Utah State","longestVenue":"Maverik Stadium","longestLocation":"Logan, Utah","longestDate":"2026-09-26","longestMiles":3158.9,"burden":49.8},{"rank":64,"burdenRank":81,"team":"Oklahoma","conference":"Southeastern Conference","games":6,"miles":7415.9,"average":1236.0,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":1,"longestOpponent":"Florida","longestVenue":"Ben Hill Griffin Stadium","longestLocation":"Gainesville, Florida","longestDate":"2026-11-07","longestMiles":1917.9,"burden":43.77},{"rank":65,"burdenRank":66,"team":"Jacksonville State","conference":"Conference USA","games":6,"miles":7395.9,"average":1232.7,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"New Mexico State","longestVenue":"Aggie Memorial Stadium","longestLocation":"Las Cruces, New Mexico","longestDate":"2026-10-29","longestMiles":2434.5,"burden":51.87},{"rank":66,"burdenRank":65,"team":"Colorado State","conference":"Pac-12","games":5,"miles":7248.5,"average":1449.7,"longHaul":0,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"UTSA","longestVenue":"Alamodome","longestLocation":"San Antonio, Texas","longestDate":"2026-09-26","longestMiles":1711.9,"burden":52.19},{"rank":67,"burdenRank":76,"team":"Central Michigan","conference":"Mid-American","games":6,"miles":7063.8,"average":1177.3,"longHaul":2,"international":0,"timeZones":2,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":1,"longestOpponent":"New Mexico","longestVenue":"University Stadium (NM)","longestLocation":"Albuquerque, New Mexico","longestDate":"2026-09-06","longestMiles":2604.9,"burden":46.18},{"rank":68,"burdenRank":56,"team":"Texas Tech","conference":"Big 12","games":5,"miles":7043.6,"average":1408.7,"longHaul":2,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Oregon State","longestVenue":"Reser Stadium","longestLocation":"Corvallis, Oregon","longestDate":"2026-09-12","longestMiles":2738.5,"burden":57.26},{"rank":69,"burdenRank":61,"team":"NC State","conference":"Atlantic Coast Conference","games":5,"miles":7017.7,"average":1403.5,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Stanford","longestVenue":"Stanford Stadium","longestLocation":"Stanford, California","longestDate":"2026-10-24","longestMiles":4780.6,"burden":54.04},{"rank":70,"burdenRank":70,"team":"Notre Dame","conference":"Football Bowl Subdivision Independents","games":6,"miles":6965.4,"average":1160.9,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":2,"longestOpponent":"BYU","longestVenue":"LaVell Edwards Stadium","longestLocation":"Provo, Utah","longestDate":"2026-10-17","longestMiles":2649.8,"burden":48.41},{"rank":71,"burdenRank":63,"team":"Wisconsin","conference":"Big Ten","games":6,"miles":6938.7,"average":1156.5,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":1,"longestOpponent":"UCLA","longestVenue":"Rose Bowl","longestLocation":"Pasadena, California","longestDate":"2026-10-17","longestMiles":3319.4,"burden":52.99},{"rank":72,"burdenRank":67,"team":"Minnesota","conference":"Big Ten","games":5,"miles":6850.5,"average":1370.1,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"Washington","longestVenue":"Husky Stadium","longestLocation":"Seattle, Washington","longestDate":"2026-09-26","longestMiles":2783.1,"burden":51.07},{"rank":73,"burdenRank":64,"team":"Utah State","conference":"Pac-12","games":6,"miles":6804.0,"average":1134.0,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Texas State","longestVenue":"Bobcat Stadium (TX)","longestLocation":"San Marcos, Texas","longestDate":"2026-10-24","longestMiles":2254.1,"burden":52.74},{"rank":74,"burdenRank":71,"team":"Penn State","conference":"Big Ten","games":5,"miles":6691.2,"average":1338.2,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Washington","longestVenue":"Husky Stadium","longestLocation":"Seattle, Washington","longestDate":"2026-11-07","longestMiles":4437.2,"burden":47.63},{"rank":75,"burdenRank":60,"team":"Indiana","conference":"Big Ten","games":4,"miles":6647.0,"average":1661.8,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":1,"neutralSites":0,"longestOpponent":"Washington","longestVenue":"Husky Stadium","longestLocation":"Seattle, Washington","longestDate":"2026-11-21","longestMiles":3738.8,"burden":54.55},{"rank":76,"burdenRank":89,"team":"Florida International","conference":"Conference USA","games":6,"miles":6637.9,"average":1106.3,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Delaware","longestVenue":"Delaware Stadium","longestLocation":"Newark, Delaware","longestDate":"2026-11-14","longestMiles":1995.2,"burden":37.99},{"rank":77,"burdenRank":78,"team":"Liberty","conference":"Conference USA","games":6,"miles":6636.4,"average":1106.1,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"New Mexico State","longestVenue":"Aggie Memorial Stadium","longestLocation":"Las Cruces, New Mexico","longestDate":"2026-11-07","longestMiles":3192.8,"burden":45.11},{"rank":78,"burdenRank":83,"team":"Louisiana","conference":"Sun Belt","games":6,"miles":6620.9,"average":1103.5,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"USC","longestVenue":"Los Angeles Memorial Coliseum","longestLocation":"Los Angeles, California","longestDate":"2026-09-13","longestMiles":3107.6,"burden":43.13},{"rank":79,"burdenRank":80,"team":"Fresno State","conference":"Pac-12","games":6,"miles":6468.9,"average":1078.2,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Texas State","longestVenue":"Bobcat Stadium (TX)","longestLocation":"San Marcos, Texas","longestDate":"2026-11-14","longestMiles":2687.9,"burden":43.88},{"rank":80,"burdenRank":72,"team":"Boise State","conference":"Pac-12","games":5,"miles":6435.9,"average":1287.2,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"Western Michigan","longestVenue":"Waldo Stadium","longestLocation":"Kalamazoo, Michigan","longestDate":"2026-09-26","longestMiles":3082.7,"burden":47.59},{"rank":81,"burdenRank":77,"team":"Charlotte","conference":"American Athletic","games":6,"miles":6386.0,"average":1064.3,"longHaul":0,"international":0,"timeZones":4,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"North Texas","longestVenue":"DATCU Stadium","longestLocation":"Denton, Texas","longestDate":"2026-10-10","longestMiles":1895.5,"burden":45.27},{"rank":82,"burdenRank":85,"team":"Georgia Tech","conference":"Atlantic Coast Conference","games":5,"miles":6275.3,"average":1255.1,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Stanford","longestVenue":"Stanford Stadium","longestLocation":"Stanford, California","longestDate":"2026-09-27","longestMiles":4245.1,"burden":41.74},{"rank":83,"burdenRank":73,"team":"Michigan","conference":"Big Ten","games":4,"miles":6265.6,"average":1566.4,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Oregon","longestVenue":"Autzen Stadium","longestLocation":"Eugene, Oregon","longestDate":"2026-11-14","longestMiles":3933.3,"burden":47.16},{"rank":84,"burdenRank":86,"team":"North Texas","conference":"American Athletic","games":6,"miles":6263.0,"average":1043.8,"longHaul":1,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Navy","longestVenue":"Navy-Marine Corps Memorial Stadium","longestLocation":"Annapolis, Maryland","longestDate":"2026-10-24","longestMiles":2433.9,"burden":39.76},{"rank":85,"burdenRank":94,"team":"Florida","conference":"Southeastern Conference","games":6,"miles":6165.8,"average":1027.6,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":1,"longestOpponent":"Texas","longestVenue":"DKR-Texas Memorial Stadium","longestLocation":"Austin, Texas","longestDate":"2026-10-17","longestMiles":1842.3,"burden":33.59},{"rank":86,"burdenRank":84,"team":"Florida State","conference":"Atlantic Coast Conference","games":5,"miles":6077.6,"average":1215.5,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Boston College","longestVenue":"Alumni Stadium (Chestnut Hill, MA)","longestLocation":"Chestnut Hill, Massachusetts","longestDate":"2026-11-07","longestMiles":2194.4,"burden":42.77},{"rank":87,"burdenRank":92,"team":"Tulsa","conference":"American Athletic","games":6,"miles":6067.5,"average":1011.2,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Navy","longestVenue":"Navy-Marine Corps Memorial Stadium","longestLocation":"Annapolis, Maryland","longestDate":"2026-10-10","longestMiles":2160.3,"burden":36.07},{"rank":88,"burdenRank":93,"team":"Oklahoma State","conference":"Big 12","games":6,"miles":6004.9,"average":1000.8,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"West Virginia","longestVenue":"Milan Puskar Stadium","longestLocation":"Morgantown, West Virginia","longestDate":"2026-09-26","longestMiles":1925.3,"burden":34.33},{"rank":89,"burdenRank":82,"team":"Illinois","conference":"Big Ten","games":5,"miles":5954.0,"average":1190.8,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"UCLA","longestVenue":"Rose Bowl","longestLocation":"Pasadena, California","longestDate":"2026-11-14","longestMiles":3380.8,"burden":43.64},{"rank":90,"burdenRank":102,"team":"UAB","conference":"American Athletic","games":6,"miles":5788.5,"average":964.8,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Temple","longestVenue":"Lincoln Financial Field","longestLocation":"Philadelphia, Pennsylvania","longestDate":"2026-11-14","longestMiles":1559.5,"burden":29.18},{"rank":91,"burdenRank":86,"team":"Michigan State","conference":"Big Ten","games":5,"miles":5710.6,"average":1142.1,"longHaul":1,"international":0,"timeZones":4,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"UCLA","longestVenue":"Rose Bowl","longestLocation":"Pasadena, California","longestDate":"2026-10-24","longestMiles":3803.8,"burden":39.76},{"rank":92,"burdenRank":96,"team":"Arkansas","conference":"Southeastern Conference","games":5,"miles":5632.0,"average":1126.4,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Utah","longestVenue":"Rice-Eccles Stadium","longestLocation":"Salt Lake City, Utah","longestDate":"2026-09-13","longestMiles":2015.8,"burden":32.41},{"rank":93,"burdenRank":91,"team":"Middle Tennessee","conference":"Conference USA","games":6,"miles":5579.2,"average":929.9,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Florida International","longestVenue":"Pitbull Stadium","longestLocation":"Miami, Florida","longestDate":"2026-10-20","longestMiles":1565.3,"burden":37.21},{"rank":94,"burdenRank":79,"team":"Northwestern","conference":"Big Ten","games":5,"miles":5559.4,"average":1111.9,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Oregon","longestVenue":"Autzen Stadium","longestLocation":"Eugene, Oregon","longestDate":"2026-10-31","longestMiles":3557.1,"burden":44.91},{"rank":95,"burdenRank":88,"team":"Kansas State","conference":"Big 12","games":5,"miles":5503.2,"average":1100.6,"longHaul":0,"international":0,"timeZones":4,"maxTimeZoneChange":2,"backToBack":1,"neutralSites":0,"longestOpponent":"Arizona State","longestVenue":"Mountain America Stadium","longestLocation":"Tempe, Arizona","longestDate":"2026-10-24","longestMiles":1881.9,"burden":38.1},{"rank":96,"burdenRank":105,"team":"Texas A&M","conference":"Southeastern Conference","games":5,"miles":5437.6,"average":1087.5,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"South Carolina","longestVenue":"Williams-Brice Stadium","longestLocation":"Columbia, South Carolina","longestDate":"2026-11-07","longestMiles":1847.1,"burden":26.83},{"rank":97,"burdenRank":97,"team":"UTSA","conference":"American Athletic","games":6,"miles":5388.4,"average":898.1,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Florida Atlantic","longestVenue":"FAU Stadium","longestLocation":"Boca Raton, Florida","longestDate":"2026-11-06","longestMiles":2280.8,"burden":31.65},{"rank":98,"burdenRank":99,"team":"Temple","conference":"American Athletic","games":5,"miles":5346.6,"average":1069.3,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"South Florida","longestVenue":"Raymond James Stadium","longestLocation":"Tampa, Florida","longestDate":"2026-10-03","longestMiles":1848.4,"burden":29.95},{"rank":99,"burdenRank":104,"team":"Old Dominion","conference":"Sun Belt","games":6,"miles":5325.4,"average":887.6,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Louisiana Tech","longestVenue":"Joe Aillet Stadium","longestLocation":"Ruston, Louisiana","longestDate":"2026-10-24","longestMiles":1949.5,"burden":27.3},{"rank":100,"burdenRank":90,"team":"Purdue","conference":"Big Ten","games":5,"miles":5310.4,"average":1062.1,"longHaul":1,"international":0,"timeZones":5,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"UCLA","longestVenue":"Rose Bowl","longestLocation":"Pasadena, California","longestDate":"2026-09-20","longestMiles":3522.8,"burden":37.59},{"rank":101,"burdenRank":109,"team":"Coastal Carolina","conference":"Sun Belt","games":6,"miles":5310.3,"average":885.1,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Louisiana","longestVenue":"Cajun Field","longestLocation":"Lafayette, Louisiana","longestDate":"2026-11-21","longestMiles":1603.0,"burden":26.36},{"rank":102,"burdenRank":95,"team":"East Carolina","conference":"American Athletic","games":6,"miles":5216.5,"average":869.4,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Memphis","longestVenue":"Simmons Bank Liberty Stadium","longestLocation":"Memphis, Tennessee","longestDate":"2026-10-22","longestMiles":1422.0,"burden":33.12},{"rank":103,"burdenRank":98,"team":"Iowa","conference":"Big Ten","games":5,"miles":5214.5,"average":1042.9,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":2,"backToBack":0,"neutralSites":0,"longestOpponent":"Washington","longestVenue":"Husky Stadium","longestLocation":"Seattle, Washington","longestDate":"2026-10-10","longestMiles":3111.4,"burden":31.27},{"rank":104,"burdenRank":100,"team":"Buffalo","conference":"Mid-American","games":6,"miles":5190.1,"average":865.0,"longHaul":1,"international":0,"timeZones":0,"maxTimeZoneChange":0,"backToBack":2,"neutralSites":0,"longestOpponent":"Florida International","longestVenue":"Pitbull Stadium","longestLocation":"Miami, Florida","longestDate":"2026-09-12","longestMiles":2390.1,"burden":29.86},{"rank":105,"burdenRank":106,"team":"Marshall","conference":"Sun Belt","games":6,"miles":5059.4,"average":843.2,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"UL Monroe","longestVenue":"Malone Stadium","longestLocation":"Monroe, Louisiana","longestDate":"2026-11-28","longestMiles":1355.6,"burden":26.76},{"rank":106,"burdenRank":108,"team":"Kentucky","conference":"Southeastern Conference","games":5,"miles":5008.6,"average":1001.7,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Texas A&M","longestVenue":"Kyle Field","longestLocation":"College Station, Texas","longestDate":"2026-09-19","longestMiles":1692.8,"burden":26.45},{"rank":107,"burdenRank":110,"team":"South Carolina","conference":"Southeastern Conference","games":5,"miles":4996.2,"average":999.2,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Oklahoma","longestVenue":"Memorial Stadium (Norman, OK)","longestLocation":"Norman, Oklahoma","longestDate":"2026-10-31","longestMiles":1873.9,"burden":25.83},{"rank":108,"burdenRank":103,"team":"Toledo","conference":"Mid-American","games":5,"miles":4876.2,"average":975.2,"longHaul":1,"international":0,"timeZones":3,"maxTimeZoneChange":3,"backToBack":0,"neutralSites":0,"longestOpponent":"Sacramento State","longestVenue":"Hornet Stadium","longestLocation":"Sacramento, California","longestDate":"2026-11-04","longestMiles":3986.9,"burden":28.77},{"rank":109,"burdenRank":106,"team":"LSU","conference":"Southeastern Conference","games":5,"miles":4603.5,"average":920.7,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Kentucky","longestVenue":"Kroger Field","longestLocation":"Lexington, Kentucky","longestDate":"2026-10-10","longestMiles":1298.5,"burden":26.76},{"rank":110,"burdenRank":112,"team":"Virginia","conference":"Atlantic Coast Conference","games":5,"miles":4442.1,"average":888.4,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":1,"longestOpponent":"SMU","longestVenue":"Gerald J. Ford Stadium","longestLocation":"University Park, Texas","longestDate":"2026-10-17","longestMiles":2174.1,"burden":23.21},{"rank":111,"burdenRank":111,"team":"Texas","conference":"Southeastern Conference","games":5,"miles":4437.2,"average":887.4,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":1,"longestOpponent":"Tennessee","longestVenue":"Neyland Stadium","longestLocation":"Knoxville, Tennessee","longestDate":"2026-09-26","longestMiles":1777.5,"burden":23.24},{"rank":112,"burdenRank":114,"team":"Mississippi State","conference":"Southeastern Conference","games":5,"miles":4349.8,"average":870.0,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Minnesota","longestVenue":"Huntington Bank Stadium","longestLocation":"Minneapolis, Minnesota","longestDate":"2026-09-12","longestMiles":1660.4,"burden":22.63},{"rank":113,"burdenRank":116,"team":"Arkansas State","conference":"Sun Belt","games":6,"miles":4306.5,"average":717.8,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Coastal Carolina","longestVenue":"Brooks Stadium (SC)","longestLocation":"Conway, South Carolina","longestDate":"2026-11-14","longestMiles":1351.0,"burden":21.29},{"rank":114,"burdenRank":115,"team":"Syracuse","conference":"Atlantic Coast Conference","games":6,"miles":4255.5,"average":709.2,"longHaul":0,"international":0,"timeZones":0,"maxTimeZoneChange":0,"backToBack":2,"neutralSites":0,"longestOpponent":"NC State","longestVenue":"Carter-Finley Stadium","longestLocation":"Raleigh, North Carolina","longestDate":"2026-11-14","longestMiles":1037.0,"burden":22.32},{"rank":115,"burdenRank":101,"team":"Kennesaw State","conference":"Conference USA","games":6,"miles":4226.6,"average":704.4,"longHaul":0,"international":0,"timeZones":5,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Sam Houston","longestVenue":"Elliott T. Bowers Stadium","longestLocation":"Huntsville, Texas","longestDate":"2026-11-14","longestMiles":1359.4,"burden":29.44},{"rank":116,"burdenRank":113,"team":"Rutgers","conference":"Big Ten","games":5,"miles":4085.9,"average":817.2,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Wisconsin","longestVenue":"Camp Randall Stadium","longestLocation":"Madison, Wisconsin","longestDate":"2026-11-07","longestMiles":1577.7,"burden":23.03},{"rank":117,"burdenRank":118,"team":"UL Monroe","conference":"Sun Belt","games":6,"miles":4042.2,"average":673.7,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"App State","longestVenue":"Kidd Brewer Stadium","longestLocation":"Boone, North Carolina","longestDate":"2026-11-21","longestMiles":1287.7,"burden":19.4},{"rank":118,"burdenRank":127,"team":"South Alabama","conference":"Sun Belt","games":6,"miles":3992.2,"average":665.4,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Marshall","longestVenue":"Joan C. Edwards Stadium","longestLocation":"Huntington, West Virginia","longestDate":"2026-10-20","longestMiles":1253.0,"burden":17.16},{"rank":119,"burdenRank":122,"team":"Louisville","conference":"Atlantic Coast Conference","games":6,"miles":3931.5,"average":655.2,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":1,"longestOpponent":"Syracuse","longestVenue":"JMA Wireless Dome","longestLocation":"Syracuse, New York","longestDate":"2026-10-17","longestMiles":1208.8,"burden":18.46},{"rank":120,"burdenRank":131,"team":"Ole Miss","conference":"Southeastern Conference","games":5,"miles":3872.2,"average":774.4,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":1,"longestOpponent":"Texas","longestVenue":"DKR-Texas Memorial Stadium","longestLocation":"Austin, Texas","longestDate":"2026-10-24","longestMiles":1110.3,"burden":15.24},{"rank":121,"burdenRank":125,"team":"Akron","conference":"Mid-American","games":6,"miles":3842.3,"average":640.4,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Minnesota","longestVenue":"Huntington Bank Stadium","longestLocation":"Minneapolis, Minnesota","longestDate":"2026-09-19","longestMiles":1299.1,"burden":17.66},{"rank":122,"burdenRank":120,"team":"Ball State","conference":"Mid-American","games":7,"miles":3820.2,"average":545.7,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Massachusetts","longestVenue":"Warren McGuirk Alumni Stadium","longestLocation":"Hadley, Massachusetts","longestDate":"2026-11-04","longestMiles":1368.7,"burden":19.08},{"rank":123,"burdenRank":124,"team":"Tennessee","conference":"Southeastern Conference","games":5,"miles":3814.7,"average":762.9,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Texas A&M","longestVenue":"Kyle Field","longestLocation":"College Station, Texas","longestDate":"2026-11-14","longestMiles":1611.4,"burden":18.3},{"rank":124,"burdenRank":117,"team":"Western Michigan","conference":"Mid-American","games":6,"miles":3814.1,"average":635.7,"longHaul":1,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Rice","longestVenue":"Rice Stadium","longestLocation":"Houston, Texas","longestDate":"2026-09-19","longestMiles":2050.8,"burden":19.95},{"rank":125,"burdenRank":130,"team":"Duke","conference":"Atlantic Coast Conference","games":6,"miles":3713.8,"average":619.0,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Miami","longestVenue":"Hard Rock Stadium","longestLocation":"Miami Gardens, Florida","longestDate":"2026-11-14","longestMiles":1395.5,"burden":16.07},{"rank":126,"burdenRank":121,"team":"Georgia State","conference":"Sun Belt","games":6,"miles":3656.4,"average":609.4,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"James Madison","longestVenue":"Bridgeforth Stadium","longestLocation":"Harrisonburg, Virginia","longestDate":"2026-10-17","longestMiles":894.9,"burden":18.79},{"rank":127,"burdenRank":123,"team":"Louisiana Tech","conference":"Sun Belt","games":6,"miles":3589.4,"average":598.2,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Georgia Southern","longestVenue":"Allen E. Paulson Stadium","longestLocation":"Statesboro, Georgia","longestDate":"2026-11-28","longestMiles":1266.9,"burden":18.32},{"rank":128,"burdenRank":136,"team":"Southern Miss","conference":"Sun Belt","games":6,"miles":3559.1,"average":593.2,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Old Dominion","longestVenue":"S.B. Ballard Stadium","longestLocation":"Norfolk, Virginia","longestDate":"2026-11-28","longestMiles":1674.7,"burden":10.6},{"rank":129,"burdenRank":134,"team":"Missouri","conference":"Southeastern Conference","games":5,"miles":3525.8,"average":705.2,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"Georgia","longestVenue":"Sanford Stadium","longestLocation":"Athens, Georgia","longestDate":"2026-11-14","longestMiles":1210.1,"burden":11.72},{"rank":130,"burdenRank":119,"team":"Bowling Green","conference":"Mid-American","games":6,"miles":3503.7,"average":583.9,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Nebraska","longestVenue":"Memorial Stadium (Lincoln, NE)","longestLocation":"Lincoln, Nebraska","longestDate":"2026-09-12","longestMiles":1363.3,"burden":19.33},{"rank":131,"burdenRank":135,"team":"Miami (OH)","conference":"Mid-American","games":6,"miles":3285.6,"average":547.6,"longHaul":0,"international":0,"timeZones":0,"maxTimeZoneChange":0,"backToBack":1,"neutralSites":0,"longestOpponent":"Massachusetts","longestVenue":"Warren McGuirk Alumni Stadium","longestLocation":"Hadley, Massachusetts","longestDate":"2026-10-10","longestMiles":1331.5,"burden":11.41},{"rank":132,"burdenRank":138,"team":"App State","conference":"Sun Belt","games":6,"miles":3188.2,"average":531.4,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":0,"longestOpponent":"South Alabama","longestVenue":"Hancock Whitney Stadium","longestLocation":"Mobile, Alabama","longestDate":"2026-11-27","longestMiles":1068.8,"burden":8.42},{"rank":133,"burdenRank":126,"team":"Georgia Southern","conference":"Sun Belt","games":6,"miles":2934.5,"average":489.1,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":0,"longestOpponent":"Old Dominion","longestVenue":"S.B. Ballard Stadium","longestLocation":"Norfolk, Virginia","longestDate":"2026-10-15","longestMiles":877.6,"burden":17.34},{"rank":134,"burdenRank":128,"team":"Georgia","conference":"Southeastern Conference","games":5,"miles":2845.8,"average":569.2,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":1,"longestOpponent":"Arkansas","longestVenue":"Razorback Stadium","longestLocation":"Fayetteville, Arkansas","longestDate":"2026-09-19","longestMiles":1256.8,"burden":16.59},{"rank":135,"burdenRank":129,"team":"Vanderbilt","conference":"Southeastern Conference","games":5,"miles":2837.9,"average":567.6,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Florida","longestVenue":"Ben Hill Griffin Stadium","longestLocation":"Gainesville, Florida","longestDate":"2026-11-21","longestMiles":1035.6,"burden":16.12},{"rank":136,"burdenRank":132,"team":"Eastern Michigan","conference":"Mid-American","games":7,"miles":2812.2,"average":401.7,"longHaul":0,"international":0,"timeZones":1,"maxTimeZoneChange":1,"backToBack":2,"neutralSites":1,"longestOpponent":"Massachusetts","longestVenue":"Warren McGuirk Alumni Stadium","longestLocation":"Hadley, Massachusetts","longestDate":"2026-10-03","longestMiles":1134.7,"burden":13.93},{"rank":137,"burdenRank":133,"team":"Alabama","conference":"Southeastern Conference","games":5,"miles":2445.7,"average":489.1,"longHaul":0,"international":0,"timeZones":2,"maxTimeZoneChange":1,"backToBack":1,"neutralSites":0,"longestOpponent":"Kentucky","longestVenue":"Kroger Field","longestLocation":"Lexington, Kentucky","longestDate":"2026-09-12","longestMiles":747.9,"burden":12.99},{"rank":138,"burdenRank":137,"team":"Auburn","conference":"Southeastern Conference","games":6,"miles":2186.4,"average":364.4,"longHaul":0,"international":0,"timeZones":3,"maxTimeZoneChange":1,"backToBack":0,"neutralSites":1,"longestOpponent":"Ole Miss","longestVenue":"Vaught-Hemingway Stadium","longestLocation":"Oxford, Mississippi","longestDate":"2026-10-31","longestMiles":525.7,"burden":10.07}],"comparisons":[{"changeRank":1,"team":"Arizona State","conference":"Big 12","rank2026":5,"rank2025":44,"miles2026":18375.4,"miles2025":8909.8,"difference":9465.6,"percentChange":106.2,"status":"Matched in both seasons"},{"changeRank":2,"team":"Kansas","conference":"Big 12","rank2026":13,"rank2025":92,"miles2026":13631.3,"miles2025":5956.7,"difference":7674.6,"percentChange":128.8,"status":"Matched in both seasons"},{"changeRank":3,"team":"Hawai'i","conference":"Mountain West","rank2026":1,"rank2025":1,"miles2026":37221.0,"miles2025":29619.8,"difference":7601.2,"percentChange":25.7,"status":"Matched in both seasons"},{"changeRank":4,"team":"Northern Illinois","conference":"Mountain West","rank2026":14,"rank2025":91,"miles2026":13565.9,"miles2025":5989.8,"difference":7576.1,"percentChange":126.5,"status":"Matched in both seasons"},{"changeRank":5,"team":"New Mexico State","conference":"Conference USA","rank2026":7,"rank2025":31,"miles2026":17763.0,"miles2025":10339.2,"difference":7423.8,"percentChange":71.8,"status":"Matched in both seasons"},{"changeRank":6,"team":"Virginia Tech","conference":"Atlantic Coast Conference","rank2026":32,"rank2025":130,"miles2026":10149.4,"miles2025":2855.3,"difference":7294.1,"percentChange":255.5,"status":"Matched in both seasons"},{"changeRank":7,"team":"San José State","conference":"Mountain West","rank2026":11,"rank2025":71,"miles2026":13660.6,"miles2025":7225.3,"difference":6435.3,"percentChange":89.1,"status":"Matched in both seasons"},{"changeRank":8,"team":"Rice","conference":"American Athletic","rank2026":18,"rank2025":78,"miles2026":12292.9,"miles2025":6733.9,"difference":5559.0,"percentChange":82.6,"status":"Matched in both seasons"},{"changeRank":9,"team":"Ohio","conference":"Mid-American","rank2026":57,"rank2025":129,"miles2026":7922.5,"miles2025":2934.6,"difference":4987.9,"percentChange":170.0,"status":"Matched in both seasons"},{"changeRank":10,"team":"Miami","conference":"Atlantic Coast Conference","rank2026":21,"rank2025":82,"miles2026":11442.6,"miles2025":6554.7,"difference":4887.9,"percentChange":74.6,"status":"Matched in both seasons"},{"changeRank":11,"team":"Clemson","conference":"Atlantic Coast Conference","rank2026":56,"rank2025":126,"miles2026":7962.5,"miles2025":3137.0,"difference":4825.5,"percentChange":153.8,"status":"Matched in both seasons"},{"changeRank":12,"team":"Memphis","conference":"American Athletic","rank2026":25,"rank2025":96,"miles2026":10504.2,"miles2025":5825.0,"difference":4679.2,"percentChange":80.3,"status":"Matched in both seasons"},{"changeRank":13,"team":"Baylor","conference":"Big 12","rank2026":46,"rank2025":110,"miles2026":8591.6,"miles2025":4359.8,"difference":4231.8,"percentChange":97.1,"status":"Matched in both seasons"},{"changeRank":14,"team":"Western Kentucky","conference":"Conference USA","rank2026":39,"rank2025":104,"miles2026":9169.4,"miles2025":5119.9,"difference":4049.5,"percentChange":79.1,"status":"Matched in both seasons"},{"changeRank":15,"team":"TCU","conference":"Big 12","rank2026":15,"rank2025":36,"miles2026":13257.5,"miles2025":9256.7,"difference":4000.8,"percentChange":43.2,"status":"Matched in both seasons"},{"changeRank":16,"team":"UConn","conference":"Football Bowl Subdivision Independents","rank2026":22,"rank2025":75,"miles2026":10800.1,"miles2025":6982.6,"difference":3817.5,"percentChange":54.7,"status":"Matched in both seasons"},{"changeRank":17,"team":"NC State","conference":"Atlantic Coast Conference","rank2026":69,"rank2025":122,"miles2026":7017.7,"miles2025":3391.5,"difference":3626.2,"percentChange":106.9,"status":"Matched in both seasons"},{"changeRank":18,"team":"Navy","conference":"American Athletic","rank2026":24,"rank2025":63,"miles2026":10769.8,"miles2025":7494.3,"difference":3275.5,"percentChange":43.7,"status":"Matched in both seasons"},{"changeRank":19,"team":"New Mexico","conference":"Mountain West","rank2026":19,"rank2025":46,"miles2026":12038.9,"miles2025":8802.6,"difference":3236.3,"percentChange":36.8,"status":"Matched in both seasons"},{"changeRank":20,"team":"UNLV","conference":"Mountain West","rank2026":10,"rank2025":25,"miles2026":14200.7,"miles2025":11098.6,"difference":3102.1,"percentChange":28.0,"status":"Matched in both seasons"},{"changeRank":21,"team":"James Madison","conference":"Sun Belt","rank2026":50,"rank2025":103,"miles2026":8361.2,"miles2025":5291.5,"difference":3069.7,"percentChange":58.0,"status":"Matched in both seasons"},{"changeRank":22,"team":"Florida Atlantic","conference":"American Athletic","rank2026":27,"rank2025":70,"miles2026":10254.2,"miles2025":7270.6,"difference":2983.6,"percentChange":41.0,"status":"Matched in both seasons"},{"changeRank":23,"team":"Colorado","conference":"Big 12","rank2026":29,"rank2025":65,"miles2026":10209.4,"miles2025":7454.3,"difference":2755.1,"percentChange":37.0,"status":"Matched in both seasons"},{"changeRank":24,"team":"Wake Forest","conference":"Atlantic Coast Conference","rank2026":43,"rank2025":90,"miles2026":8890.4,"miles2025":6161.4,"difference":2729.0,"percentChange":44.3,"status":"Matched in both seasons"},{"changeRank":25,"team":"Kentucky","conference":"Southeastern Conference","rank2026":106,"rank2025":134,"miles2026":5008.6,"miles2025":2517.3,"difference":2491.3,"percentChange":99.0,"status":"Matched in both seasons"},{"changeRank":26,"team":"North Carolina","conference":"Atlantic Coast Conference","rank2026":36,"rank2025":72,"miles2026":9686.1,"miles2025":7197.0,"difference":2489.1,"percentChange":34.6,"status":"Matched in both seasons"},{"changeRank":27,"team":"Tulane","conference":"American Athletic","rank2026":51,"rank2025":95,"miles2026":8327.3,"miles2025":5855.5,"difference":2471.8,"percentChange":42.2,"status":"Matched in both seasons"},{"changeRank":28,"team":"Ohio State","conference":"Big Ten","rank2026":44,"rank2025":85,"miles2026":8837.6,"miles2025":6419.1,"difference":2418.5,"percentChange":37.7,"status":"Matched in both seasons"},{"changeRank":29,"team":"California","conference":"Atlantic Coast Conference","rank2026":6,"rank2025":6,"miles2026":18100.6,"miles2025":15745.6,"difference":2355.0,"percentChange":15.0,"status":"Matched in both seasons"},{"changeRank":30,"team":"Charlotte","conference":"American Athletic","rank2026":81,"rank2025":112,"miles2026":6386.0,"miles2025":4220.4,"difference":2165.6,"percentChange":51.3,"status":"Matched in both seasons"},{"changeRank":31,"team":"Coastal Carolina","conference":"Sun Belt","rank2026":101,"rank2025":125,"miles2026":5310.3,"miles2025":3322.6,"difference":1987.7,"percentChange":59.8,"status":"Matched in both seasons"},{"changeRank":32,"team":"Boston College","conference":"Atlantic Coast Conference","rank2026":20,"rank2025":33,"miles2026":11645.8,"miles2025":9829.9,"difference":1815.9,"percentChange":18.5,"status":"Matched in both seasons"},{"changeRank":33,"team":"USC","conference":"Big Ten","rank2026":8,"rank2025":8,"miles2026":16288.6,"miles2025":14595.2,"difference":1693.4,"percentChange":11.6,"status":"Matched in both seasons"},{"changeRank":34,"team":"Houston","conference":"Big 12","rank2026":26,"rank2025":48,"miles2026":10326.6,"miles2025":8642.0,"difference":1684.6,"percentChange":19.5,"status":"Matched in both seasons"},{"changeRank":35,"team":"Texas State","conference":"Pac-12","rank2026":48,"rank2025":77,"miles2026":8541.4,"miles2025":6857.9,"difference":1683.5,"percentChange":24.5,"status":"Matched in both seasons"},{"changeRank":36,"team":"Buffalo","conference":"Mid-American","rank2026":104,"rank2025":121,"miles2026":5190.1,"miles2025":3617.6,"difference":1572.5,"percentChange":43.5,"status":"Matched in both seasons"},{"changeRank":37,"team":"Colorado State","conference":"Pac-12","rank2026":66,"rank2025":97,"miles2026":7248.5,"miles2025":5778.1,"difference":1470.4,"percentChange":25.4,"status":"Matched in both seasons"},{"changeRank":38,"team":"Arkansas","conference":"Southeastern Conference","rank2026":92,"rank2025":111,"miles2026":5632.0,"miles2025":4240.5,"difference":1391.5,"percentChange":32.8,"status":"Matched in both seasons"},{"changeRank":39,"team":"Ole Miss","conference":"Southeastern Conference","rank2026":120,"rank2025":133,"miles2026":3872.2,"miles2025":2517.7,"difference":1354.5,"percentChange":53.8,"status":"Matched in both seasons"},{"changeRank":40,"team":"Tennessee","conference":"Southeastern Conference","rank2026":123,"rank2025":131,"miles2026":3814.7,"miles2025":2704.0,"difference":1110.7,"percentChange":41.1,"status":"Matched in both seasons"},{"changeRank":41,"team":"Southern Miss","conference":"Sun Belt","rank2026":128,"rank2025":135,"miles2026":3559.1,"miles2025":2482.4,"difference":1076.7,"percentChange":43.4,"status":"Matched in both seasons"},{"changeRank":42,"team":"Cincinnati","conference":"Big 12","rank2026":38,"rank2025":54,"miles2026":9300.8,"miles2025":8233.4,"difference":1067.4,"percentChange":13.0,"status":"Matched in both seasons"},{"changeRank":43,"team":"South Florida","conference":"American Athletic","rank2026":62,"rank2025":84,"miles2026":7472.8,"miles2025":6423.4,"difference":1049.4,"percentChange":16.3,"status":"Matched in both seasons"},{"changeRank":44,"team":"Arizona","conference":"Big 12","rank2026":35,"rank2025":47,"miles2026":9759.7,"miles2025":8761.8,"difference":997.9,"percentChange":11.4,"status":"Matched in both seasons"},{"changeRank":45,"team":"Pittsburgh","conference":"Atlantic Coast Conference","rank2026":47,"rank2025":58,"miles2026":8587.3,"miles2025":7657.7,"difference":929.6,"percentChange":12.1,"status":"Matched in both seasons"},{"changeRank":46,"team":"Kent State","conference":"Mid-American","rank2026":52,"rank2025":66,"miles2026":8283.6,"miles2025":7424.8,"difference":858.8,"percentChange":11.6,"status":"Matched in both seasons"},{"changeRank":47,"team":"Bowling Green","conference":"Mid-American","rank2026":130,"rank2025":132,"miles2026":3503.7,"miles2025":2655.8,"difference":847.9,"percentChange":31.9,"status":"Matched in both seasons"},{"changeRank":48,"team":"Georgia","conference":"Southeastern Conference","rank2026":134,"rank2025":136,"miles2026":2845.8,"miles2025":2000.6,"difference":845.2,"percentChange":42.2,"status":"Matched in both seasons"},{"changeRank":49,"team":"Western Michigan","conference":"Mid-American","rank2026":124,"rank2025":128,"miles2026":3814.1,"miles2025":3053.4,"difference":760.7,"percentChange":24.9,"status":"Matched in both seasons"},{"changeRank":50,"team":"Central Michigan","conference":"Mid-American","rank2026":67,"rank2025":87,"miles2026":7063.8,"miles2025":6313.4,"difference":750.4,"percentChange":11.9,"status":"Matched in both seasons"},{"changeRank":51,"team":"Texas A&M","conference":"Southeastern Conference","rank2026":96,"rank2025":106,"miles2026":5437.6,"miles2025":4717.0,"difference":720.6,"percentChange":15.3,"status":"Matched in both seasons"},{"changeRank":52,"team":"Maryland","conference":"Big Ten","rank2026":41,"rank2025":52,"miles2026":9043.8,"miles2025":8336.1,"difference":707.7,"percentChange":8.5,"status":"Matched in both seasons"},{"changeRank":53,"team":"Mississippi State","conference":"Southeastern Conference","rank2026":112,"rank2025":118,"miles2026":4349.8,"miles2025":3754.5,"difference":595.3,"percentChange":15.9,"status":"Matched in both seasons"},{"changeRank":54,"team":"Wisconsin","conference":"Big Ten","rank2026":71,"rank2025":86,"miles2026":6938.7,"miles2025":6389.8,"difference":548.9,"percentChange":8.6,"status":"Matched in both seasons"},{"changeRank":55,"team":"Marshall","conference":"Sun Belt","rank2026":105,"rank2025":108,"miles2026":5059.4,"miles2025":4510.7,"difference":548.7,"percentChange":12.2,"status":"Matched in both seasons"},{"changeRank":56,"team":"Florida","conference":"Southeastern Conference","rank2026":85,"rank2025":99,"miles2026":6165.8,"miles2025":5683.0,"difference":482.8,"percentChange":8.5,"status":"Matched in both seasons"},{"changeRank":57,"team":"Illinois","conference":"Big Ten","rank2026":89,"rank2025":100,"miles2026":5954.0,"miles2025":5473.0,"difference":481.0,"percentChange":8.8,"status":"Matched in both seasons"},{"changeRank":58,"team":"Missouri","conference":"Southeastern Conference","rank2026":129,"rank2025":127,"miles2026":3525.8,"miles2025":3089.0,"difference":436.8,"percentChange":14.1,"status":"Matched in both seasons"},{"changeRank":59,"team":"LSU","conference":"Southeastern Conference","rank2026":109,"rank2025":114,"miles2026":4603.5,"miles2025":4212.5,"difference":391.0,"percentChange":9.3,"status":"Matched in both seasons"},{"changeRank":60,"team":"Nevada","conference":"Mountain West","rank2026":16,"rank2025":18,"miles2026":12737.6,"miles2025":12368.1,"difference":369.5,"percentChange":3.0,"status":"Matched in both seasons"},{"changeRank":61,"team":"Georgia State","conference":"Sun Belt","rank2026":126,"rank2025":124,"miles2026":3656.4,"miles2025":3329.6,"difference":326.8,"percentChange":9.8,"status":"Matched in both seasons"},{"changeRank":62,"team":"Arkansas State","conference":"Sun Belt","rank2026":113,"rank2025":117,"miles2026":4306.5,"miles2025":4012.3,"difference":294.2,"percentChange":7.3,"status":"Matched in both seasons"},{"changeRank":63,"team":"Jacksonville State","conference":"Conference USA","rank2026":65,"rank2025":73,"miles2026":7395.9,"miles2025":7196.0,"difference":199.9,"percentChange":2.8,"status":"Matched in both seasons"},{"changeRank":64,"team":"Massachusetts","conference":"Mid-American","rank2026":49,"rank2025":53,"miles2026":8436.0,"miles2025":8268.8,"difference":167.2,"percentChange":2.0,"status":"Matched in both seasons"},{"changeRank":65,"team":"Nebraska","conference":"Big Ten","rank2026":59,"rank2025":59,"miles2026":7767.9,"miles2025":7604.4,"difference":163.5,"percentChange":2.2,"status":"Matched in both seasons"},{"changeRank":66,"team":"Ball State","conference":"Mid-American","rank2026":122,"rank2025":120,"miles2026":3820.2,"miles2025":3668.0,"difference":152.2,"percentChange":4.1,"status":"Matched in both seasons"},{"changeRank":67,"team":"Toledo","conference":"Mid-American","rank2026":108,"rank2025":105,"miles2026":4876.2,"miles2025":4749.7,"difference":126.5,"percentChange":2.7,"status":"Matched in both seasons"},{"changeRank":68,"team":"Troy","conference":"Sun Belt","rank2026":63,"rank2025":68,"miles2026":7432.2,"miles2025":7361.6,"difference":70.6,"percentChange":1.0,"status":"Matched in both seasons"},{"changeRank":69,"team":"Oklahoma","conference":"Southeastern Conference","rank2026":64,"rank2025":67,"miles2026":7415.9,"miles2025":7420.4,"difference":-4.5,"percentChange":-0.1,"status":"Matched in both seasons"},{"changeRank":70,"team":"Georgia Tech","conference":"Atlantic Coast Conference","rank2026":82,"rank2025":88,"miles2026":6275.3,"miles2025":6280.0,"difference":-4.7,"percentChange":-0.1,"status":"Matched in both seasons"},{"changeRank":71,"team":"Indiana","conference":"Big Ten","rank2026":75,"rank2025":80,"miles2026":6647.0,"miles2025":6671.3,"difference":-24.3,"percentChange":-0.4,"status":"Matched in both seasons"},{"changeRank":72,"team":"Purdue","conference":"Big Ten","rank2026":100,"rank2025":102,"miles2026":5310.4,"miles2025":5355.3,"difference":-44.9,"percentChange":-0.8,"status":"Matched in both seasons"},{"changeRank":73,"team":"Old Dominion","conference":"Sun Belt","rank2026":99,"rank2025":101,"miles2026":5325.4,"miles2025":5430.4,"difference":-105.0,"percentChange":-1.9,"status":"Matched in both seasons"},{"changeRank":74,"team":"South Alabama","conference":"Sun Belt","rank2026":118,"rank2025":115,"miles2026":3992.2,"miles2025":4123.9,"difference":-131.7,"percentChange":-3.2,"status":"Matched in both seasons"},{"changeRank":75,"team":"SMU","conference":"Atlantic Coast Conference","rank2026":30,"rank2025":30,"miles2026":10203.4,"miles2025":10369.9,"difference":-166.5,"percentChange":-1.6,"status":"Matched in both seasons"},{"changeRank":76,"team":"Akron","conference":"Mid-American","rank2026":121,"rank2025":116,"miles2026":3842.3,"miles2025":4048.4,"difference":-206.1,"percentChange":-5.1,"status":"Matched in both seasons"},{"changeRank":77,"team":"Louisiana","conference":"Sun Belt","rank2026":78,"rank2025":74,"miles2026":6620.9,"miles2025":7003.9,"difference":-383.0,"percentChange":-5.5,"status":"Matched in both seasons"},{"changeRank":78,"team":"Utah","conference":"Big 12","rank2026":45,"rank2025":41,"miles2026":8616.3,"miles2025":9075.9,"difference":-459.6,"percentChange":-5.1,"status":"Matched in both seasons"},{"changeRank":79,"team":"Louisville","conference":"Atlantic Coast Conference","rank2026":119,"rank2025":107,"miles2026":3931.5,"miles2025":4540.8,"difference":-609.3,"percentChange":-13.4,"status":"Matched in both seasons"},{"changeRank":80,"team":"Texas Tech","conference":"Big 12","rank2026":68,"rank2025":57,"miles2026":7043.6,"miles2025":7671.4,"difference":-627.8,"percentChange":-8.2,"status":"Matched in both seasons"},{"changeRank":81,"team":"Iowa","conference":"Big Ten","rank2026":103,"rank2025":93,"miles2026":5214.5,"miles2025":5932.4,"difference":-717.9,"percentChange":-12.1,"status":"Matched in both seasons"},{"changeRank":82,"team":"Oregon","conference":"Big Ten","rank2026":9,"rank2025":3,"miles2026":15960.7,"miles2025":16744.4,"difference":-783.7,"percentChange":-4.7,"status":"Matched in both seasons"},{"changeRank":83,"team":"Vanderbilt","conference":"Southeastern Conference","rank2026":135,"rank2025":119,"miles2026":2837.9,"miles2025":3680.0,"difference":-842.1,"percentChange":-22.9,"status":"Matched in both seasons"},{"changeRank":84,"team":"Penn State","conference":"Big Ten","rank2026":74,"rank2025":60,"miles2026":6691.2,"miles2025":7545.2,"difference":-854.0,"percentChange":-11.3,"status":"Matched in both seasons"},{"changeRank":85,"team":"Alabama","conference":"Southeastern Conference","rank2026":137,"rank2025":123,"miles2026":2445.7,"miles2025":3369.4,"difference":-923.7,"percentChange":-27.4,"status":"Matched in both seasons"},{"changeRank":86,"team":"South Carolina","conference":"Southeastern Conference","rank2026":107,"rank2025":94,"miles2026":4996.2,"miles2025":5927.6,"difference":-931.4,"percentChange":-15.7,"status":"Matched in both seasons"},{"changeRank":87,"team":"Miami (OH)","conference":"Mid-American","rank2026":131,"rank2025":113,"miles2026":3285.6,"miles2025":4218.8,"difference":-933.2,"percentChange":-22.1,"status":"Matched in both seasons"},{"changeRank":88,"team":"Oregon State","conference":"Pac-12","rank2026":34,"rank2025":26,"miles2026":9971.6,"miles2025":11035.5,"difference":-1063.9,"percentChange":-9.6,"status":"Matched in both seasons"},{"changeRank":89,"team":"Delaware","conference":"Conference USA","rank2026":42,"rank2025":32,"miles2026":9002.6,"miles2025":10270.3,"difference":-1267.7,"percentChange":-12.3,"status":"Matched in both seasons"},{"changeRank":90,"team":"UCF","conference":"Big 12","rank2026":23,"rank2025":19,"miles2026":10780.2,"miles2025":12075.2,"difference":-1295.0,"percentChange":-10.7,"status":"Matched in both seasons"},{"changeRank":91,"team":"Florida State","conference":"Atlantic Coast Conference","rank2026":86,"rank2025":61,"miles2026":6077.6,"miles2025":7506.5,"difference":-1428.9,"percentChange":-19.0,"status":"Matched in both seasons"},{"changeRank":92,"team":"East Carolina","conference":"American Athletic","rank2026":102,"rank2025":79,"miles2026":5216.5,"miles2025":6693.8,"difference":-1477.3,"percentChange":-22.1,"status":"Matched in both seasons"},{"changeRank":93,"team":"UAB","conference":"American Athletic","rank2026":90,"rank2025":69,"miles2026":5788.5,"miles2025":7271.6,"difference":-1483.1,"percentChange":-20.4,"status":"Matched in both seasons"},{"changeRank":94,"team":"UTEP","conference":"Mountain West","rank2026":28,"rank2025":23,"miles2026":10237.0,"miles2025":11749.0,"difference":-1512.0,"percentChange":-12.9,"status":"Matched in both seasons"},{"changeRank":95,"team":"Eastern Michigan","conference":"Mid-American","rank2026":136,"rank2025":109,"miles2026":2812.2,"miles2025":4374.9,"difference":-1562.7,"percentChange":-35.7,"status":"Matched in both seasons"},{"changeRank":96,"team":"UCLA","conference":"Big Ten","rank2026":12,"rank2025":7,"miles2026":13636.0,"miles2025":15215.0,"difference":-1579.0,"percentChange":-10.4,"status":"Matched in both seasons"},{"changeRank":97,"team":"Missouri State","conference":"Conference USA","rank2026":60,"rank2025":37,"miles2026":7528.2,"miles2025":9113.9,"difference":-1585.7,"percentChange":-17.4,"status":"Matched in both seasons"},{"changeRank":98,"team":"Washington","conference":"Big Ten","rank2026":17,"rank2025":11,"miles2026":12446.0,"miles2025":14086.1,"difference":-1640.1,"percentChange":-11.6,"status":"Matched in both seasons"},{"changeRank":99,"team":"Minnesota","conference":"Big Ten","rank2026":72,"rank2025":49,"miles2026":6850.5,"miles2025":8510.7,"difference":-1660.2,"percentChange":-19.5,"status":"Matched in both seasons"},{"changeRank":100,"team":"Michigan State","conference":"Big Ten","rank2026":91,"rank2025":64,"miles2026":5710.6,"miles2025":7463.7,"difference":-1753.1,"percentChange":-23.5,"status":"Matched in both seasons"},{"changeRank":101,"team":"Stanford","conference":"Atlantic Coast Conference","rank2026":2,"rank2025":2,"miles2026":21755.2,"miles2025":23520.2,"difference":-1765.0,"percentChange":-7.5,"status":"Matched in both seasons"},{"changeRank":102,"team":"Liberty","conference":"Conference USA","rank2026":77,"rank2025":50,"miles2026":6636.4,"miles2025":8406.5,"difference":-1770.1,"percentChange":-21.1,"status":"Matched in both seasons"},{"changeRank":103,"team":"Oklahoma State","conference":"Big 12","rank2026":88,"rank2025":55,"miles2026":6004.9,"miles2025":7825.4,"difference":-1820.5,"percentChange":-23.3,"status":"Matched in both seasons"},{"changeRank":104,"team":"Northwestern","conference":"Big Ten","rank2026":94,"rank2025":62,"miles2026":5559.4,"miles2025":7496.8,"difference":-1937.4,"percentChange":-25.8,"status":"Matched in both seasons"},{"changeRank":105,"team":"Kennesaw State","conference":"Conference USA","rank2026":115,"rank2025":89,"miles2026":4226.6,"miles2025":6172.7,"difference":-1946.1,"percentChange":-31.5,"status":"Matched in both seasons"},{"changeRank":106,"team":"Michigan","conference":"Big Ten","rank2026":83,"rank2025":51,"miles2026":6265.6,"miles2025":8356.6,"difference":-2091.0,"percentChange":-25.0,"status":"Matched in both seasons"},{"changeRank":107,"team":"Virginia","conference":"Atlantic Coast Conference","rank2026":110,"rank2025":76,"miles2026":4442.1,"miles2025":6868.5,"difference":-2426.4,"percentChange":-35.3,"status":"Matched in both seasons"},{"changeRank":108,"team":"West Virginia","conference":"Big 12","rank2026":31,"rank2025":17,"miles2026":10159.8,"miles2025":12592.5,"difference":-2432.7,"percentChange":-19.3,"status":"Matched in both seasons"},{"changeRank":109,"team":"Temple","conference":"American Athletic","rank2026":98,"rank2025":56,"miles2026":5346.6,"miles2025":7800.5,"difference":-2453.9,"percentChange":-31.5,"status":"Matched in both seasons"},{"changeRank":110,"team":"Notre Dame","conference":"Football Bowl Subdivision Independents","rank2026":70,"rank2025":35,"miles2026":6965.4,"miles2025":9496.2,"difference":-2530.8,"percentChange":-26.7,"status":"Matched in both seasons"},{"changeRank":111,"team":"UL Monroe","conference":"Sun Belt","rank2026":117,"rank2025":81,"miles2026":4042.2,"miles2025":6607.9,"difference":-2565.7,"percentChange":-38.8,"status":"Matched in both seasons"},{"changeRank":112,"team":"North Texas","conference":"American Athletic","rank2026":84,"rank2025":38,"miles2026":6263.0,"miles2025":9113.9,"difference":-2850.9,"percentChange":-31.3,"status":"Matched in both seasons"},{"changeRank":113,"team":"Tulsa","conference":"American Athletic","rank2026":87,"rank2025":42,"miles2026":6067.5,"miles2025":9003.5,"difference":-2936.0,"percentChange":-32.6,"status":"Matched in both seasons"},{"changeRank":114,"team":"Air Force","conference":"Mountain West","rank2026":61,"rank2025":28,"miles2026":7501.6,"miles2025":10532.3,"difference":-3030.7,"percentChange":-28.8,"status":"Matched in both seasons"},{"changeRank":115,"team":"Middle Tennessee","conference":"Conference USA","rank2026":93,"rank2025":45,"miles2026":5579.2,"miles2025":8853.4,"difference":-3274.2,"percentChange":-37.0,"status":"Matched in both seasons"},{"changeRank":116,"team":"App State","conference":"Sun Belt","rank2026":132,"rank2025":83,"miles2026":3188.2,"miles2025":6539.6,"difference":-3351.4,"percentChange":-51.2,"status":"Matched in both seasons"},{"changeRank":117,"team":"Auburn","conference":"Southeastern Conference","rank2026":138,"rank2025":98,"miles2026":2186.4,"miles2025":5702.6,"difference":-3516.2,"percentChange":-61.7,"status":"Matched in both seasons"},{"changeRank":118,"team":"San Diego State","conference":"Pac-12","rank2026":40,"rank2025":14,"miles2026":9048.1,"miles2025":13343.5,"difference":-4295.4,"percentChange":-32.2,"status":"Matched in both seasons"},{"changeRank":119,"team":"Army","conference":"American Athletic","rank2026":33,"rank2025":9,"miles2026":10006.7,"miles2025":14317.1,"difference":-4310.4,"percentChange":-30.1,"status":"Matched in both seasons"},{"changeRank":120,"team":"UTSA","conference":"American Athletic","rank2026":97,"rank2025":34,"miles2026":5388.4,"miles2025":9734.9,"difference":-4346.5,"percentChange":-44.6,"status":"Matched in both seasons"},{"changeRank":121,"team":"Texas","conference":"Southeastern Conference","rank2026":111,"rank2025":40,"miles2026":4437.2,"miles2025":9077.1,"difference":-4639.9,"percentChange":-51.1,"status":"Matched in both seasons"},{"changeRank":122,"team":"Boise State","conference":"Pac-12","rank2026":80,"rank2025":24,"miles2026":6435.9,"miles2025":11371.1,"difference":-4935.2,"percentChange":-43.4,"status":"Matched in both seasons"},{"changeRank":123,"team":"Iowa State","conference":"Big 12","rank2026":53,"rank2025":15,"miles2026":8251.9,"miles2025":13190.4,"difference":-4938.5,"percentChange":-37.4,"status":"Matched in both seasons"},{"changeRank":124,"team":"Wyoming","conference":"Mountain West","rank2026":58,"rank2025":16,"miles2026":7823.2,"miles2025":13023.3,"difference":-5200.1,"percentChange":-39.9,"status":"Matched in both seasons"},{"changeRank":125,"team":"Florida International","conference":"Conference USA","rank2026":76,"rank2025":21,"miles2026":6637.9,"miles2025":11858.2,"difference":-5220.3,"percentChange":-44.0,"status":"Matched in both seasons"},{"changeRank":126,"team":"Fresno State","conference":"Pac-12","rank2026":79,"rank2025":22,"miles2026":6468.9,"miles2025":11759.0,"difference":-5290.1,"percentChange":-45.0,"status":"Matched in both seasons"},{"changeRank":127,"team":"Louisiana Tech","conference":"Sun Belt","rank2026":127,"rank2025":43,"miles2026":3589.4,"miles2025":8933.8,"difference":-5344.4,"percentChange":-59.8,"status":"Matched in both seasons"},{"changeRank":128,"team":"Duke","conference":"Atlantic Coast Conference","rank2026":125,"rank2025":39,"miles2026":3713.8,"miles2025":9085.1,"difference":-5371.3,"percentChange":-59.1,"status":"Matched in both seasons"},{"changeRank":129,"team":"BYU","conference":"Big 12","rank2026":54,"rank2025":12,"miles2026":8215.1,"miles2025":13658.6,"difference":-5443.5,"percentChange":-39.9,"status":"Matched in both seasons"},{"changeRank":130,"team":"Syracuse","conference":"Atlantic Coast Conference","rank2026":114,"rank2025":27,"miles2026":4255.5,"miles2025":10578.3,"difference":-6322.8,"percentChange":-59.8,"status":"Matched in both seasons"},{"changeRank":131,"team":"Rutgers","conference":"Big Ten","rank2026":116,"rank2025":29,"miles2026":4085.9,"miles2025":10429.9,"difference":-6344.0,"percentChange":-60.8,"status":"Matched in both seasons"},{"changeRank":132,"team":"Washington State","conference":"Pac-12","rank2026":37,"rank2025":5,"miles2026":9381.0,"miles2025":16383.4,"difference":-7002.4,"percentChange":-42.7,"status":"Matched in both seasons"},{"changeRank":133,"team":"Utah State","conference":"Pac-12","rank2026":73,"rank2025":10,"miles2026":6804.0,"miles2025":14142.6,"difference":-7338.6,"percentChange":-51.9,"status":"Matched in both seasons"},{"changeRank":134,"team":"Kansas State","conference":"Big 12","rank2026":95,"rank2025":13,"miles2026":5503.2,"miles2025":13389.5,"difference":-7886.3,"percentChange":-58.9,"status":"Matched in both seasons"},{"changeRank":135,"team":"Sam Houston","conference":"Conference USA","rank2026":55,"rank2025":4,"miles2026":8185.0,"miles2025":16639.3,"difference":-8454.3,"percentChange":-50.8,"status":"Matched in both seasons"},{"changeRank":136,"team":"Georgia Southern","conference":"Sun Belt","rank2026":133,"rank2025":20,"miles2026":2934.5,"miles2025":11910.8,"difference":-8976.3,"percentChange":-75.4,"status":"Matched in both seasons"},{"changeRank":137,"team":"North Dakota State","conference":"Mountain West","rank2026":4,"rank2025":null,"miles2026":18907.1,"miles2025":null,"difference":null,"percentChange":null,"status":"No 2025 team total"},{"changeRank":137,"team":"Sacramento State","conference":"Mid-American","rank2026":3,"rank2025":null,"miles2026":20865.2,"miles2025":null,"difference":null,"percentChange":null,"status":"No 2025 team total"}],"conferences":[{"rank":1,"conference":"Mountain West","teams":10,"totalMiles":147893.6,"averagePerTeam":14789.4,"averagePerTrip":2457.6,"longHaul":27,"international":0,"timeZones":86,"backToBack":13,"burden":81.72},{"rank":2,"conference":"Big 12","teams":16,"totalMiles":158027.3,"averagePerTeam":9876.7,"averagePerTrip":1835.5,"longHaul":26,"international":3,"timeZones":93,"backToBack":12,"burden":68.23},{"rank":3,"conference":"Atlantic Coast Conference","teams":17,"totalMiles":154136.8,"averagePerTeam":9066.9,"averagePerTrip":1668.2,"longHaul":25,"international":1,"timeZones":67,"backToBack":20,"burden":56.93},{"rank":4,"conference":"Football Bowl Subdivision Independents","teams":2,"totalMiles":17765.5,"averagePerTeam":8882.8,"averagePerTrip":1660.5,"longHaul":4,"international":0,"timeZones":8,"backToBack":2,"burden":65.14},{"rank":5,"conference":"Big Ten","teams":18,"totalMiles":149208.4,"averagePerTeam":8289.4,"averagePerTrip":1680.9,"longHaul":30,"international":0,"timeZones":97,"backToBack":6,"burden":56.43},{"rank":6,"conference":"Conference USA","teams":10,"totalMiles":82124.2,"averagePerTeam":8212.4,"averagePerTrip":1346.9,"longHaul":12,"international":0,"timeZones":42,"backToBack":7,"burden":52.06},{"rank":7,"conference":"Pac-12","teams":8,"totalMiles":63899.4,"averagePerTeam":7987.4,"averagePerTrip":1556.5,"longHaul":11,"international":0,"timeZones":36,"backToBack":8,"burden":60.69},{"rank":8,"conference":"American Athletic","teams":14,"totalMiles":110084.4,"averagePerTeam":7863.2,"averagePerTrip":1322.7,"longHaul":18,"international":0,"timeZones":42,"backToBack":12,"burden":51.56},{"rank":9,"conference":"Mid-American","teams":13,"totalMiles":83715.5,"averagePerTeam":6439.7,"averagePerTrip":1058.5,"longHaul":13,"international":0,"timeZones":36,"backToBack":14,"burden":36.06},{"rank":10,"conference":"Sun Belt","teams":14,"totalMiles":67377.9,"averagePerTeam":4812.7,"averagePerTrip":802.1,"longHaul":3,"international":0,"timeZones":24,"backToBack":14,"burden":26.28},{"rank":11,"conference":"Southeastern Conference","teams":16,"totalMiles":69575.1,"averagePerTeam":4348.4,"averagePerTrip":836.8,"longHaul":1,"international":0,"timeZones":34,"backToBack":6,"burden":22.66}],"trips":[{"rank":1,"date":"2026-09-19","team":"Arizona State","conference":"Big 12","opponent":"Kansas","gameType":"Neutral-Site Game","venue":"Wembley Stadium","city":"London","country":"United Kingdom","location":"London, United Kingdom","miles":10518.1,"timeZones":8,"international":true,"direction":"Eastward"},{"rank":2,"date":"2026-08-29","team":"TCU","conference":"Big 12","opponent":"North Carolina","gameType":"Neutral-Site Game","venue":"Aviva Stadium","city":"Dublin","country":"Ireland","location":"Dublin, Ireland","miles":8974.7,"timeZones":6,"international":true,"direction":"Eastward"},{"rank":3,"date":"2026-09-19","team":"Kansas","conference":"Big 12","opponent":"Arizona State","gameType":"Neutral-Site Game","venue":"Wembley Stadium","city":"London","country":"United Kingdom","location":"London, United Kingdom","miles":8735.5,"timeZones":6,"international":true,"direction":"Eastward"},{"rank":4,"date":"2026-10-24","team":"Hawai'i","conference":"Mountain West","opponent":"Northern Illinois","gameType":"Road Game","venue":"Huskie Stadium","city":"DeKalb","country":"United States","location":"DeKalb, Illinois","miles":8376.7,"timeZones":5,"international":false,"direction":"Eastward"},{"rank":5,"date":"2026-11-15","team":"North Dakota State","conference":"Mountain West","opponent":"Hawai'i","gameType":"Road Game","venue":"Clarence T.C. Ching Athletics Complex","city":"Honolulu","country":"United States","location":"Honolulu, Hawaii","miles":7599.9,"timeZones":4,"international":false,"direction":"Westward"},{"rank":6,"date":"2026-08-29","team":"North Carolina","conference":"Atlantic Coast Conference","opponent":"TCU","gameType":"Neutral-Site Game","venue":"Aviva Stadium","city":"Dublin","country":"Ireland","location":"Dublin, Ireland","miles":7209.4,"timeZones":5,"international":true,"direction":"Eastward"},{"rank":7,"date":"2026-09-26","team":"Hawai'i","conference":"Mountain West","opponent":"Wyoming","gameType":"Road Game","venue":"War Memorial Stadium","city":"Laramie","country":"United States","location":"Laramie, Wyoming","miles":6643.0,"timeZones":4,"international":false,"direction":"Eastward"},{"rank":8,"date":"2026-11-07","team":"Hawai'i","conference":"Mountain West","opponent":"UTEP","gameType":"Road Game","venue":"Sun Bowl","city":"El Paso","country":"United States","location":"El Paso, Texas","miles":6447.5,"timeZones":3,"international":false,"direction":"Eastward"},{"rank":9,"date":"2026-10-17","team":"New Mexico","conference":"Mountain West","opponent":"Hawai'i","gameType":"Road Game","venue":"Clarence T.C. Ching Athletics Complex","city":"Honolulu","country":"United States","location":"Honolulu, Hawaii","miles":6444.9,"timeZones":4,"international":false,"direction":"Westward"},{"rank":10,"date":"2026-09-12","team":"New Mexico State","conference":"Conference USA","opponent":"Hawai'i","gameType":"Road Game","venue":"Clarence T.C. Ching Athletics Complex","city":"Honolulu","country":"United States","location":"Honolulu, Hawaii","miles":6420.3,"timeZones":4,"international":false,"direction":"Westward"}],"international":[{"rank":1,"date":"2026-09-19","team":"Arizona State","conference":"Big 12","opponent":"Kansas","gameType":"Neutral-Site Game","venue":"Wembley Stadium","city":"London","country":"United Kingdom","location":"London, United Kingdom","miles":10518.1,"timeZones":8,"international":true,"direction":"Eastward"},{"rank":2,"date":"2026-08-29","team":"TCU","conference":"Big 12","opponent":"North Carolina","gameType":"Neutral-Site Game","venue":"Aviva Stadium","city":"Dublin","country":"Ireland","location":"Dublin, Ireland","miles":8974.7,"timeZones":6,"international":true,"direction":"Eastward"},{"rank":3,"date":"2026-09-19","team":"Kansas","conference":"Big 12","opponent":"Arizona State","gameType":"Neutral-Site Game","venue":"Wembley Stadium","city":"London","country":"United Kingdom","location":"London, United Kingdom","miles":8735.5,"timeZones":6,"international":true,"direction":"Eastward"},{"rank":4,"date":"2026-08-29","team":"North Carolina","conference":"Atlantic Coast Conference","opponent":"TCU","gameType":"Neutral-Site Game","venue":"Aviva Stadium","city":"Dublin","country":"Ireland","location":"Dublin, Ireland","miles":7209.4,"timeZones":5,"international":true,"direction":"Eastward"}]};
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const number = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 });
+  const oneDecimal = new Intl.NumberFormat("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+  function escapeHtml(value) {
+    return String(value == null ? "" : value)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+  function formatMiles(value) { return number.format(Math.round(value)); }
+  function signedMiles(value) { return (value >= 0 ? "+" : "") + formatMiles(value); }
+  function fullDate(value) {
+    return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(value));
+  }
+
+  const teamSearch = document.getElementById("team-search");
+  const conferenceFilter = document.getElementById("conference-filter");
+  const teamBody = document.getElementById("team-body");
+  const teamCount = document.getElementById("team-count");
+  const loadMore = document.getElementById("load-more");
+  let visibleTeams = 15;
+  let sortKey = "rank";
+  let sortDirection = 1;
+
+  [...new Set(DATA.teams.map(row => row.conference))].sort().forEach(name => {
+    const option = document.createElement("option");
+    option.value = name;
+    option.textContent = name;
+    conferenceFilter.appendChild(option);
+  });
+
+  function filteredTeams() {
+    const query = teamSearch.value.trim().toLowerCase();
+    const conference = conferenceFilter.value;
+    return DATA.teams.filter(row =>
+      (!query || row.team.toLowerCase().includes(query)) &&
+      (!conference || row.conference === conference)
+    ).sort((a, b) => {
+      const av = a[sortKey];
+      const bv = b[sortKey];
+      if (typeof av === "string") return av.localeCompare(bv) * sortDirection;
+      return (av - bv) * sortDirection;
+    });
+  }
+
+  function renderTeams() {
+    const rows = filteredTeams();
+    const showing = rows.slice(0, visibleTeams);
+    const maxMiles = Math.max(...DATA.teams.map(row => row.miles));
+    teamBody.innerHTML = showing.map(row => `
+      <tr class="${row.rank <= 3 ? "podium" : ""}">
+        <td class="rank-cell">${row.rank}</td>
+        <td class="team-cell"><strong>${escapeHtml(row.team)}</strong><small>Burden Rank: ${row.burdenRank}</small></td>
+        <td>${escapeHtml(row.conference)}</td>
+        <td class="miles-cell bar-cell"><strong>${formatMiles(row.miles)}</strong><div class="mini-bar" aria-hidden="true"><i data-width="${row.miles / maxMiles * 100}"></i></div></td>
+        <td class="num-cell">${formatMiles(row.average)}</td>
+        <td class="num-cell">${row.longHaul}</td>
+        <td class="num-cell">${row.timeZones}</td>
+        <td class="num-cell">${oneDecimal.format(row.burden)}</td>
+      </tr>`).join("");
+    teamCount.textContent = rows.length ? `Showing ${Math.min(showing.length, rows.length)} of ${rows.length} teams` : "No teams match these filters";
+    loadMore.hidden = showing.length >= rows.length;
+    requestAnimationFrame(() => teamBody.querySelectorAll(".mini-bar i").forEach(bar => { bar.style.width = bar.dataset.width + "%"; }));
+    postHeight();
+  }
+
+  teamSearch.addEventListener("input", () => { visibleTeams = 15; renderTeams(); });
+  conferenceFilter.addEventListener("change", () => { visibleTeams = 15; renderTeams(); });
+  loadMore.addEventListener("click", () => { visibleTeams += 15; renderTeams(); });
+  document.querySelectorAll("th[data-key]").forEach(header => {
+    header.addEventListener("click", () => {
+      const key = header.dataset.key;
+      if (sortKey === key) sortDirection *= -1;
+      else { sortKey = key; sortDirection = key === "team" || key === "conference" ? 1 : -1; }
+      if (key === "rank") sortDirection = sortKey === key && header.getAttribute("aria-sort") === "ascending" ? -1 : 1;
+      document.querySelectorAll("th[data-key]").forEach(item => item.removeAttribute("aria-sort"));
+      header.setAttribute("aria-sort", sortDirection === 1 ? "ascending" : "descending");
+      renderTeams();
+    });
+  });
+
+  function renderComparisons(mode) {
+    const rows = DATA.comparisons.filter(row => row.miles2025 != null);
+    rows.sort((a, b) => mode === "increase" ? b.difference - a.difference : a.difference - b.difference);
+    const selected = rows.slice(0, 7);
+    const maxValue = Math.max(...selected.flatMap(row => [row.miles2025, row.miles2026]));
+    document.getElementById("comparison-list").innerHTML = selected.map(row => {
+      const positive = row.difference >= 0;
+      return `<div class="compare-row">
+        <div class="compare-name">${escapeHtml(row.team)}<small>${escapeHtml(row.conference)}</small></div>
+        <div class="compare-bars">
+          <div class="compare-line"><span class="compare-year">2025</span><span class="compare-track"><i class="compare-fill" data-width="${row.miles2025 / maxValue * 100}"></i></span><span class="compare-value">${formatMiles(row.miles2025)}</span></div>
+          <div class="compare-line current"><span class="compare-year">2026</span><span class="compare-track"><i class="compare-fill" data-width="${row.miles2026 / maxValue * 100}"></i></span><span class="compare-value">${formatMiles(row.miles2026)}</span></div>
+        </div>
+        <div class="compare-delta ${positive ? "up" : "down"}">${signedMiles(row.difference)}</div>
+      </div>`;
+    }).join("");
+    requestAnimationFrame(() => document.querySelectorAll(".compare-fill").forEach(bar => { bar.style.width = bar.dataset.width + "%"; }));
+    postHeight();
+  }
+  document.querySelectorAll(".switch-button").forEach(button => button.addEventListener("click", () => {
+    document.querySelectorAll(".switch-button").forEach(item => item.classList.toggle("is-active", item === button));
+    renderComparisons(button.dataset.mode);
+  }));
+
+  function renderConferences() {
+    const maxValue = Math.max(...DATA.conferences.map(row => row.averagePerTeam));
+    document.getElementById("conference-bars").innerHTML = DATA.conferences.map(row => `
+      <div class="conference-row">
+        <div class="conference-rank">${row.rank}</div>
+        <div class="conference-name">${escapeHtml(row.conference)}<small>${row.teams} teams · ${row.longHaul} long-haul trips</small></div>
+        <div class="conference-track" aria-hidden="true"><span class="conference-fill" data-width="${row.averagePerTeam / maxValue * 100}"></span></div>
+        <div class="conference-value">${formatMiles(row.averagePerTeam)} mi.</div>
+      </div>`).join("");
+  }
+
+  function renderTrips() {
+    document.getElementById("trip-grid").innerHTML = DATA.trips.map(row => `
+      <article class="trip-card">
+        <div class="trip-rank">${row.rank}</div>
+        <div>
+          <h3>${escapeHtml(row.team)} to ${escapeHtml(row.location)}</h3>
+          <p>vs. ${escapeHtml(row.opponent)} at ${escapeHtml(row.venue)} · ${fullDate(row.date)}</p>
+          <div class="trip-stats"><span>${formatMiles(row.miles)} Total Miles</span><span>${row.timeZones} Time Zones</span><span>${escapeHtml(row.gameType)}</span></div>
+        </div>
+      </article>`).join("");
+    document.getElementById("international-grid").innerHTML = DATA.international.map(row => `
+      <article class="international-card">
+        <span class="flag">${escapeHtml(row.country)}</span>
+        <h3>${escapeHtml(row.team)} to ${escapeHtml(row.city)}</h3>
+        <strong>${formatMiles(row.miles)} miles</strong>
+        <p>vs. ${escapeHtml(row.opponent)} at ${escapeHtml(row.venue)}. ${row.timeZones} time zones crossed.</p>
+      </article>`).join("");
+  }
+
+  function countUp(element) {
+    const target = Number(element.dataset.target);
+    if (reducedMotion) {
+      element.textContent = element.dataset.comma ? number.format(target) : target;
+      return;
+    }
+    const start = performance.now();
+    const duration = 1450;
+    function frame(now) {
+      const progress = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      element.textContent = element.dataset.comma ? number.format(value) : value;
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  const revealObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      entry.target.querySelectorAll(".conference-fill").forEach((bar, index) => {
+        setTimeout(() => { bar.style.width = bar.dataset.width + "%"; }, reducedMotion ? 0 : index * 45);
+      });
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: .1 }) : null;
+  document.querySelectorAll(".reveal").forEach(element => {
+    if (revealObserver) revealObserver.observe(element);
+    else element.classList.add("is-visible");
+  });
+
+  const countObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countUp(entry.target);
+      countObserver.unobserve(entry.target);
+    });
+  }, { threshold: .35 }) : null;
+  document.querySelectorAll(".count-up").forEach(element => countObserver ? countObserver.observe(element) : countUp(element));
+
+  document.querySelectorAll("[data-jump]").forEach(button => button.addEventListener("click", () => {
+    const sentinel = document.getElementById(button.dataset.jump);
+    if (sentinel) sentinel.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+  }));
+  const sectionMenuSentinel = document.getElementById("section-menu");
+  document.querySelectorAll("[data-back-to-sections]").forEach(button => button.addEventListener("click", () => {
+    if (sectionMenuSentinel) sectionMenuSentinel.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+  }));
+  const navButtons = [...document.querySelectorAll("[data-jump]")];
+  const sectionObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navButtons.forEach(button => button.classList.toggle("is-active", button.dataset.jump === entry.target.dataset.section));
+    });
+  }, { rootMargin: "-34% 0px -58% 0px" }) : null;
+  document.querySelectorAll("[data-section]").forEach(section => sectionObserver && sectionObserver.observe(section));
+
+  const inFrame = (() => { try { return window.parent !== window; } catch (error) { return true; } })();
+  let resizeTimer;
+  function postHeight() {
+    if (!inFrame) return;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      try { window.parent.postMessage({ an_height: document.documentElement.scrollHeight }, "*"); } catch (error) {}
+    }, 80);
+  }
+  window.addEventListener("load", postHeight);
+  if ("ResizeObserver" in window) new ResizeObserver(postHeight).observe(document.body);
+
+  renderTeams();
+  renderComparisons("increase");
+  renderConferences();
+  renderTrips();
+})();
+</script>
+</body>
+</html>
