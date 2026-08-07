@@ -510,7 +510,21 @@
 
     /* Key findings */
     .finding-num {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
       font-weight: 800;
+    }
+
+    .finding-unit {
+      color: var(--green-dark);
+      font-family: var(--display);
+      font-size: clamp(18px, 2.1vw, 25px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: .01em;
+      text-transform: lowercase;
     }
 
     .finding h3 {
@@ -725,19 +739,19 @@
         <p class="section-intro">Total round-trip mileage determines the ranking, while long-haul trips, time-zone changes, and back-to-back road games add useful context to each team's journey.</p>
         <div class="findings">
           <article class="finding">
-            <div class="finding-num">37,221</div>
+            <div class="finding-num">37,221 <span class="finding-unit">miles</span></div>
             <h3>Hawai'i Goes the Distance</h3>
             <p>Hawai'i travels farther than any other team. All six road games qualify as long-haul trips, and the Rainbow Warriors cross a combined 20 time zones.</p>
             <div class="detail"><span>No. 1 in Total Miles</span><span>6,204 Miles per Trip</span></div>
           </article>
           <article class="finding">
-            <div class="finding-num">+9,466</div>
+            <div class="finding-num">+9,466 <span class="finding-unit">miles</span></div>
             <h3>Arizona State Makes the Biggest Jump</h3>
             <p>The Sun Devils add more mileage than any returning team compared with 2025. A 10,518-mile round trip to Wembley Stadium accounts for much of the increase.</p>
             <div class="detail"><span>+106.2% vs. 2025</span><span>London Neutral-Site Game</span></div>
           </article>
           <article class="finding">
-            <div class="finding-num">14,789</div>
+            <div class="finding-num">14,789 <span class="finding-unit">miles</span></div>
             <h3>The Mountain West Leads Per Team</h3>
             <p>Mountain West teams average more travel miles than any other conference, nearly 5,000 miles per team above the second-place Big 12.</p>
             <div class="detail"><span>10 Teams</span><span>27 Long-Haul Trips</span></div>
