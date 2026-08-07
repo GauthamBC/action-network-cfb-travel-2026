@@ -444,6 +444,194 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
     }
+
+
+    /* =========================================================
+       TYPOGRAPHY LEGIBILITY PASS
+       Reduce excessive boldness while keeping data prominent
+       ========================================================= */
+
+    /* Main editorial headings */
+    h1 {
+      font-weight: 800;
+      line-height: 1.02;
+    }
+
+    h2 {
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -.012em;
+    }
+
+    h3 {
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    /* Small uppercase labels */
+    .kicker,
+    .section-kicker,
+    .mini-label,
+    .stat-label,
+    .chip,
+    .control-label,
+    .rank-tag,
+    .route-meta,
+    .footer-label {
+      font-weight: 600;
+    }
+
+    /* Hero stats: keep numbers prominent without being overly heavy */
+    .hero-stat strong {
+      font-weight: 800;
+    }
+
+    .stat-label {
+      font-weight: 600;
+    }
+
+    /* Featured Hawai'i card */
+    .route-card h2 {
+      font-weight: 700;
+    }
+
+    .route-total strong {
+      font-weight: 800;
+    }
+
+    .route-total span {
+      font-weight: 500;
+    }
+
+    .route-grid b {
+      font-weight: 700;
+    }
+
+    /* Key findings */
+    .finding-num {
+      font-weight: 800;
+    }
+
+    .finding h3 {
+      font-weight: 600;
+    }
+
+    .detail span {
+      font-weight: 600;
+    }
+
+    /* Main table */
+    th {
+      font-weight: 600;
+    }
+
+    th button {
+      font-weight: 600;
+    }
+
+    .rank-cell {
+      font-weight: 700;
+    }
+
+    .team-cell strong {
+      font-weight: 600;
+    }
+
+    .miles-cell strong {
+      font-weight: 700;
+    }
+
+    /* Inputs */
+    .control {
+      font-weight: 500;
+    }
+
+    /* Navigation / buttons */
+    .return-button,
+    .table-swipe-button,
+    .page-button,
+    .load-button,
+    .switch-button {
+      font-weight: 600;
+    }
+
+    .page-ellipsis {
+      font-weight: 600;
+    }
+
+    /* Year-over-year comparison */
+    .change-callout strong {
+      font-weight: 800;
+    }
+
+    .change-callout h3 {
+      font-weight: 600;
+    }
+
+    .compare-name {
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    .compare-year {
+      font-weight: 600;
+    }
+
+    .compare-value {
+      font-weight: 500;
+    }
+
+    .compare-delta {
+      font-weight: 700;
+    }
+
+    /* Conference comparison */
+    .conference-rank {
+      font-weight: 700;
+    }
+
+    .conference-name {
+      font-weight: 600;
+      line-height: 1.12;
+    }
+
+    .conference-value {
+      font-weight: 700;
+    }
+
+    /* Longest trip cards */
+    .trip-rank {
+      font-weight: 600;
+    }
+
+    .trip-card h3 {
+      font-weight: 600;
+    }
+
+    .trip-stat strong {
+      font-weight: 700;
+    }
+
+    .trip-stat span,
+    .trip-type {
+      font-weight: 600;
+    }
+
+    /* Methodology */
+    .method-card .step {
+      font-weight: 600;
+    }
+
+    .method-card h3 {
+      font-weight: 600;
+    }
+
+    /* Source link doesn't need to look heavily bolded */
+    .source-note a {
+      font-weight: 600;
+    }
+
   </style>
 </head>
 <body>
